@@ -1,7 +1,13 @@
 # Wintathon2019
-To run :
+
 `bundle install`
- 
-`rake db:migrate`
- 
+
+`rails db:create`
+
+`rails db:migrate`
+
+`rails db:seed`
+
+To run server
+
 `rails s`
