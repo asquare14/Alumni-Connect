@@ -33,7 +33,7 @@ gem 'bootstrap-sass', '~> 3.4.0'
 gem 'sassc-rails', '>= 2.0.0'
 gem 'jquery-rails'
 gem 'devise'
-gem 'bootstrap_form'
+gem "bootstrap_form", ">= 4.0.0.alpha1"
 gem 'faker'
 gem 'will_paginate', '~> 3.1.0'
 # Use Capistrano for deployment
