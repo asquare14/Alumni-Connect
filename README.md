@@ -2,6 +2,8 @@
 
 `bundle install`
 
+`npm install`
+
 `bin/rake db:drop db:create db:migrate db:seed`
 
 To run server
