@@ -13,5 +13,7 @@ Rails.application.routes.draw do
       get 'team'
     end
   end
+
+  resources :groups
   root to: 'pages#index'
 end
