@@ -4,7 +4,7 @@ def seed_users
       User.create(
         name: "test#{user_id}",
         email: "test#{user_id}@test.com",
-        institute: "IIITB"
+        institute: "IIITB",
         password: '123456',
         password_confirmation: '123456'
       )
