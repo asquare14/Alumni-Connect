@@ -7,9 +7,10 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
+//console.log('Hello World from Webpacker')
 import ReactOnRails from 'react-on-rails';
 import LandingIndex from '../components/landing-page/Index';
+import '../components/landing-page/css/landing-page.css'
 
 ReactOnRails.register({
     LandingIndex

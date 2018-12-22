@@ -2,9 +2,11 @@
 
 `bundle install`
 
+`bin/rake db:drop db:create db:migrate db:seed`
+
 `npm install`
 
-`bin/rake db:drop db:create db:migrate db:seed`
+`bin/webpack-dev-server`
 
 To run server
 
