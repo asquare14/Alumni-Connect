@@ -10,7 +10,6 @@
 //console.log('Hello World from Webpacker')
 import ReactOnRails from 'react-on-rails';
 import LandingIndex from '../components/landing-page/Index';
-import '../components/landing-page/css/landing-page.css'
 
 ReactOnRails.register({
     LandingIndex

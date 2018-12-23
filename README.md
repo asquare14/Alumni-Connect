@@ -4,7 +4,7 @@
 
 `bin/rake db:drop db:create db:migrate db:seed`
 
-`npm install`
+`yarn install`
 
 `bin/webpack-dev-server`
 

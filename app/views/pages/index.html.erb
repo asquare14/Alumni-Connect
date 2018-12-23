@@ -1,4 +1,15 @@
-<% if user_signed_in? %>
+<% if !user_signed_in? %>
+<!-- <li>
+  <%= link_to 'Login', login_path  %>
+</li>
+<li>
+  <%= link_to 'Signup', signup_path %>
+</li> -->
+<%= react_component("LandingIndex") %>
+
+<% else %>
+
+
 <li>
   <%= render 'layouts/navigation' %>
 </li>
@@ -9,12 +20,4 @@
     <%= render 'pages/index/main_content' %>
   </div><!-- row -->
 </div><!-- container -->
-<% else %>
-<%= react_component("LandingIndex") %>
-<!-- <li>
-  <%= link_to 'Login', login_path  %>
-</li>
-<li>
-  <%= link_to 'Signup', signup_path %>
-</li> -->
 <% end %>
