@@ -36,6 +36,7 @@ gem 'devise'
 gem "bootstrap_form", ">= 4.0.0.alpha1"
 gem 'faker'
 gem 'will_paginate', '~> 3.1.0'
+gem 'acts_as_votable', '~> 0.11.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

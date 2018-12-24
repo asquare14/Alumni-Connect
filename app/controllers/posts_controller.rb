@@ -32,6 +32,19 @@ class PostsController < ApplicationController
         end
     end
 
+
+    def upvote
+        @post = Post.find(params[:id])
+        @post.upvote_by current_user
+        redirect_to post_path(@post) 
+    end
+       
+    def downvote
+        @post = Post.find(params[:id])
+        @post.unliked_by current_user
+        redirect_to post_path(@post) 
+    end
+
     private
     
     def posts_for_branch(branch)
