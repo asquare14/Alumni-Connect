@@ -4,43 +4,35 @@
       <div class="posted-by">Posted by <%= @post.user.name %></div>
       <h3><%= @post.title %></h3>
       <p><%= @post.content %></p>
+      <%=link_to like_post_path(@post), method: :put, class: 'btn btn-default btn-sm' do %>
+      <span class="glyphicon glyphicon-chevron-up"></span>
+      like <%=@post.get_upvotes.size%></td>
+      <% end %>
+    <h4>Comments</h4>
+    <% @post.comments.each do |comment| %>
+    <p>
+      <b>Commenter:</b>
+      <%= comment.commenter %>
+    </p> 
+    <p>
+      <b>Comment:</b>
+      <%= comment.body %>
+    </p>
+    <% end %>
+    <h4>Add a comment:</h4>
+    <%= form_for([@post, @post.comments.build]) do |f| %>
+      <div class="field">
+        <%= f.label :commenter %><br />
+        <%= f.text_field :commenter %>
+      </div>
+    <div class="field">
+      <%= f.label :body %><br />
+      <%= f.text_area :body %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
     </div>
-    <%=link_to like_post_path(@post), method: :put, class: 'btn btn-default btn-sm' do %>
- <span class="glyphicon glyphicon-chevron-up"></span>
- like <%=@post.get_upvotes.size%></td>
-<% end %>
-<%=link_to dislike_post_path(@post), method: :put, class: 'btn btn-default btn-sm' do %>
- <span class="glyphicon glyphicon-chevron-down"></span>
- dislike <%=@post.get_downvotes.size%></td>
-<%end%>
-
-    <div>
-  <h3>Comments</h2>
-<% @post.comments.each do |comment| %>
-  <p>
-    <b>Commenter:</b>
-    <%= comment.commenter %>
-  </p>
- 
-  <p>
-    <b>Comment:</b>
-    <%= comment.body %>
-  </p>
-<% end %>
-    <h1>Add a comment:</h1>
-<%= form_for([@post, @post.comments.build]) do |f| %>
-  <div class="field">
-    <%= f.label :commenter %><br />
-    <%= f.text_field :commenter %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-</div>
-  </div><!-- row -->
+</div><!-- row -->
 </div>
