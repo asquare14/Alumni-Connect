@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20181224182520) do
     t.string "name", default: "", null: false
     t.string "institute", default: "", null: false
     t.string "email", default: "", null: false
-    t.string "company", default: "NA"
+    t.string "company", default: ""
     t.string "linkedin", default: "", null: false
     t.string "branch", default: "", null: false
     t.string "encrypted_password", default: "", null: false
