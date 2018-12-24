@@ -7,15 +7,15 @@ class PostsController < ApplicationController
     
     def hobby
         posts_for_branch(params[:action])
-      end
+    end
     
-      def study
+    def study
         posts_for_branch(params[:action])
-      end
+    end
     
-      def team
+    def team
         posts_for_branch(params[:action])
-      end
+    end
     
     def new
         @branch = params[:branch]
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
           redirect_to root_path
         end
     end
-    
+
     private
     
     def posts_for_branch(branch)
