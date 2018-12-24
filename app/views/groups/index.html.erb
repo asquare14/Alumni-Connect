@@ -24,7 +24,7 @@
     Your College Group is <strong><%= @group.name %></strong>. Members in your group are :
     <% @group.users.each do |user| %>  
       <tr>
-        <td><a href=<%= user.linkedin%>%><%= user.name %></a></td>
+        <td><a href=<%= user.linkedin%>><%= user.name %></a></td>
         <td><%= user.email %></td>
         <td><%= user.graduation %></td>
         <td><%= user.branch %></td>
