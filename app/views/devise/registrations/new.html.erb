@@ -14,20 +14,39 @@
   <%= f.text_field :name, 
 	           placeholder: 'username (will be shown publicly)', 
 	           class: 'form-control' %>
+
   <%= f.text_field :email, 
 	           placeholder: 'email', 
 	           class: 'form-control' %>
-
+  
   <%= f.text_field :institute, 
 	           placeholder: 'institute', 
 	           class: 'form-control' %>
+
+  <%= f.text_field :graduation, 
+	           placeholder: 'Year of Graduation', 
+	           class: 'form-control' %> 
   
+  <%= f.text_field :branch, 
+	           placeholder: 'Department', 
+	           class: 'form-control' %> 
+  
+  <%= f.url_field :linkedin, 
+	           placeholder: 'Link to LinkedIn Profile', 
+	           class: 'form-control' %>
+
+  <%= f.text_field :company, 
+	           placeholder: 'Company if Alumni', 
+	           class: 'form-control' %> 
+             
   <%= f.password_field :password, 
                        placeholder: 'password', 
                        class: 'form-control' %>
+
   <%= f.password_field :password_confirmation, 
                        placeholder: 'password confirmation', 
                        class: 'form-control' %>
+
   <%= f.submit 'Sign up', class: 'btn sign-up-button' %>
 <% end %>
 		

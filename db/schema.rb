@@ -46,7 +46,11 @@ ActiveRecord::Schema.define(version: 20181222083606) do
     t.string "name", default: "", null: false
     t.string "institute", default: "", null: false
     t.string "email", default: "", null: false
+    t.string "company", default: "NA"
+    t.string "linkedin", default: "", null: false
+    t.string "branch", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.integer "graduation", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
