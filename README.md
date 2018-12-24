@@ -7,6 +7,8 @@
 
 `yarn install`
 
+`npm install`
+
 `bin/webpack-dev-server`
 
 To run server
