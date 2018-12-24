@@ -1,5 +1,5 @@
 <div id="main-content" class="col-sm-9">
-  <h3 class="page-name"><%= link_to 'Hobby', hobby_posts_path %></h3>
+  <h3 class="page-name"><%= link_to 'Events', hobby_posts_path %></h3>
   <div class="row">
     <%= render @hobby_posts %>
     <%= render no_posts_partial_path(@hobby_posts) %>
@@ -16,4 +16,5 @@
     <%= render @team_posts %>
     <%= render no_posts_partial_path(@team_posts) %>
   </div><!-- row -->
+
 </div><!-- main_content -->

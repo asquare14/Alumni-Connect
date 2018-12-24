@@ -10,7 +10,4 @@ class GroupsController < ApplicationController
             current_user.groups << @group
         end        
     end
-
-   
-
 end
