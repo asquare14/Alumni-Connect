@@ -36,6 +36,7 @@ gem 'devise'
 gem "bootstrap_form", ">= 4.0.0.alpha1"
 gem 'faker'
 gem 'will_paginate', '~> 3.1.0'
+gem 'acts_as_votable', '~> 0.11.1'
 gem "react_on_rails", "11.0.0"
 gem "webpacker", "~> 3"
 gem 'mini_racer', platforms: :ruby
