@@ -13,6 +13,10 @@ Rails.application.routes.draw do
       get 'team'
     end
   end
+ 
+  resources :posts do
+    resources :comments
+  end
 
   resources :groups
   root to: 'pages#index'
