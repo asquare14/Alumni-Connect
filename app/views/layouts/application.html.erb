@@ -11,12 +11,10 @@
   <%= stylesheet_pack_tag 'application' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
-
 <body>
   <% if user_signed_in? %>
   <%= render 'pages/index/side_menu' %>
   <%= yield %>
-
   <% else %>
   <%= yield %>
   <% end %>
