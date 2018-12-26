@@ -1,35 +1,32 @@
 .branch-main-content {
-    background: white;
     height: calc(100vh - 50px);
-    float: right;
-    margin-left: 50%;
-    margin-top: 4%;
+    margin-left: 16%;
 
-    
     .branch-search-bar{
       background-color: white;
       width: 100%;
-      height:80%;
-      
-      .new-branch-btn{
-        background-color: #4CAF50; /* Green */
-        border: none;
-        color: white;
-        padding: 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 8px;
+      height:12%;
+      padding: 0.75%;
+      display: flex;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+      .branch-search-form{
+        width: 60%;
+        margin-right: 25%;
       }
+
+    }
+    .branch-posts-bar{
+      margin-top: 10%;
+      border: 2px solid black;
     }
     #feed {
       background-color: white;
     }
+    
     .search-form {
       position: relative;
+      //margin-right: 80%;
       
       input {
         border: solid 2px rgba(0,0,0,0.2);
@@ -106,6 +103,7 @@
 
 .new-post-button-parent {
   text-align: right;
+  
   span {
     font-size: 12px;
     font-size: 1.2rem;
@@ -120,7 +118,7 @@
   border-radius: 10px;
   font-weight: bold;
   border: solid 2px $navbarColor;
-  margin: 10px 0;
+  margin-top: 7px;
   &:hover, &:active, &:focus {
     background: white;
     color: black;
@@ -139,13 +137,13 @@
   }
 }
 
-// .fa-search {
-  //   position:absolute; 
-  //   bottom:14px; 
-  //   left:10px; 
-  //   width:20px; 
-  //   height:10px;
-  // }
+.fa-search {
+    position:absolute; 
+    bottom:14px; 
+    left:10px; 
+    width:20px; 
+    height:10px;
+  }
   
   .send-message-to-user {
     background-color: $navbarColor;
