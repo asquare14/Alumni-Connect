@@ -22,8 +22,8 @@ class Index extends Component {
                                         <p>Locdefdfdfdddfdffjfnewjfhjfnhjdfnhjdnfjhdnjd cnd fhhfndhfdejfnrrjehfnerhjfnbrh</p>
                                     </div>
                                     <img className="main-child-pic" src={MainPic} alt="Not uploaded" />
-                                    <div className="main-child-div"><Link to="/login"><button className="main-child-btn">Login</button></Link></div>
-                                    <div className="main-child1-div"><Link to="/signup"><button className="main-child-btn">Register</button></Link></div>
+                                    <div className="main-child-div"><a href="/login"><button className="main-child-btn">Login</button></a></div>
+                                    <div className="main-child1-div"><a href="/signup"><button className="main-child-btn">Register</button></a></div>
                                 </div>
                             </React.Fragment>
                         </Switch>

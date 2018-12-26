@@ -18,6 +18,13 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :posts do
+    member do
+     put "like", to: "posts#upvote"
+     put "dislike", to: "posts#downvote"
+    end
+   end   
+
   resources :groups
   root to: 'pages#index'
 end
