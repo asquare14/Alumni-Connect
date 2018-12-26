@@ -9,21 +9,18 @@
     </div>
 
     <div class="branch-posts-bar">
-        <div>
-            <h1 class="page-title">
-                <%= page_title %>
-            </h1>
-        </div><!-- row -->
-
+        <!-- <h1 class="page-title">
+            <%= page_title %>
+        </h1> -->
         <div>
             <%= render 'posts/branch/categories', branch: branch %>
         </div>
 
-        <div>
-            <div id="feed">
-                <%= render @posts %>
-            </div>
-        </div><!-- row -->
+
+        <div id="feed">
+            <%= render  @posts %>
+        </div>
+
 
         <div class="infinite-scroll">
             <%= will_paginate @posts %>
