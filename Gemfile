@@ -40,6 +40,7 @@ gem "react_on_rails", "11.0.0"
 gem "webpacker", "~> 3"
 gem 'bootstrap_form'
 gem 'mini_racer', platforms: :ruby
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

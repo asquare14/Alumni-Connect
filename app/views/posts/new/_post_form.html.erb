@@ -14,6 +14,8 @@
                   maxlength: 1000,
                   placeholder: 'Describe what you are looking for. E.g. specific interests, expertise level, etc.', 
                   class: 'form-control' %>
+  <%= f.text_field :deadline,
+                    placeholder: 'date/month/year'  %>
   <%= f.collection_select :category_id, @categories, :id, :name, class: 'form-control' %>
   <%= f.submit "Create a post", class: 'form-control' %>
 <% end %>
