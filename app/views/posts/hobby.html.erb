@@ -1,6 +1,25 @@
-<%= render 'posts/modal' %>
-<%= render partial: 'posts/branch', locals: { 
+<%# <%= render 'posts/modal' %>
+<%# <%= render partial: 'posts/branch', locals: { 
     branch: 'hobby',
     page_title: 'Find an event suitable for you',
     search_placeholder: 'E.g. Hackathons, Talks'
   } %>
+<div class="container" style="margin-left: 500px">
+<h1>Listing articles</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <td><%= post.user.name %></td>
+      <td><%= link_to "I'm interested", post_path(post.id), class: 'interested' %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
