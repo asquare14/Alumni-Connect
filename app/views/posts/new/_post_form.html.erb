@@ -14,6 +14,12 @@
                   maxlength: 1000,
                   placeholder: 'Describe what you are looking for. E.g. specific interests, expertise level, etc.', 
                   class: 'form-control' %>
+  <% if @branch == 'hobby' %>
+    <%= f.text_field  :venue, 
+                      maxlength: 100, 
+                      placeholder: 'Venue', 
+                      class: 'form-control' %>
+  <% end %>
   <%= f.url_field :rel_link, 
 	           placeholder: 'Relevant Link', 
 	           class: 'form-control' %>
