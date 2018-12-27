@@ -20,9 +20,11 @@
         <div id="feed">
             <% @posts.each do |post| %>
             <div id="feed-child">
-                <p>
-                    <span class="feed-child-venue">Posted by:</span>
-                    <%= post.user.name %>
+                <p class="feed-child-head">
+                    <span class="feed-child-name">Posted by:
+                        <%= post.user.name %></span>
+
+                    <%=  image_tag ("calendar.jpg"), class: "cal-pic"%>
                 </p>
                 <p class="feed-child-title">
                     <%= post.title %>
@@ -31,13 +33,19 @@
                     <%= post.content %>
                 </p>
 
-                <% if post.image? %>
+                <% if post.image? && post.rel_link? %>
                 <%=link_to( image_tag(post.image.url, alt: 'Image', class: 'image-uploaded image-center'), post.rel_link, remote: true) %>
                 <% else %>
+                <% if !post.image? && post.rel_link? %>
                 <p>
                     <span class="feed-child-venue">Link to the website:</span>
                     <%= link_to post.rel_link , post.rel_link, remote: true %>
                 </p>
+                <% else %>
+                <% if post.image? && !post.rel_link? %>
+                <%= image_tag(post.image.url, alt: 'Image', class: 'image-uploaded image-center') %>
+                <% end %>
+                <% end %>
                 <% end %>
 
                 <!-- <%= image_tag(post.image.url, alt: 'Image', class: 'image-uploaded image-center') if post.image? %> -->
