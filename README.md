@@ -21,10 +21,13 @@ Go to rails console. Type `rails c` on console.
 
 then do the following to set first user as admin.
 
-`u = User.first`
-`u.admin = true`
-`u.save`
-`exit`
+`>u = User.first`
+
+`>u.admin = true`
+
+`>u.save`
+
+`>exit`
 
 Now refresh page, you should find link to admin dashboard.
 
