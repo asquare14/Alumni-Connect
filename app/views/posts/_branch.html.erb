@@ -35,7 +35,8 @@
                 <%=link_to( image_tag(post.image.url, alt: 'Image', class: 'image-uploaded image-center'), post.rel_link, remote: true) %>
                 <% else %>
                 <p>
-                    <%= link_to "Link to the website", post.rel_link, remote: true %>
+                    <span class="feed-child-venue">Link to the website:</span>
+                    <%= link_to post.rel_link , post.rel_link, remote: true %>
                 </p>
                 <% end %>
 

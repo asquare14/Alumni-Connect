@@ -8,7 +8,8 @@
       height:12%;
       padding: 0.75%;
       display: flex;
-      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 8px 20px -6px rgb(160, 145, 145);
+      //box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
 
       .branch-search-form{
         width: 60%;
@@ -22,7 +23,7 @@
       margin-right: 20%;
     }
     #feed {
-      background-color: white;
+      background-color: $backgroundColor;
       display: grid;
       grid-template-columns: repeat(2, 49%);
       grid-auto-flow: dense;
@@ -30,16 +31,22 @@
       column-gap: 2%;
 
       #feed-child{
-        border: 1px solid rgb(214, 205, 205);
+        border: 1px solid $backgroundColor;
         padding: 2%;
+        background-color: white;
+        //box-shadow: 0 0 10px 3px #ccc;
+        box-shadow: 0 8px 20px -6px rgb(160, 145, 145);
+
 
         .feed-child-title{
           font-weight: bold;
           text-align: center;
+          font-size: 22px;
         }
         
         .feed-child-venue{
           font-weight: bold;
+          //margin-bottom: 4%;
         }
 
         p{
@@ -209,4 +216,6 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1%;
+  margin-bottom: 4%;
 }
