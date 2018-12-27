@@ -9,7 +9,6 @@ class Post < ApplicationRecord
 
   has_many :comments
   acts_as_votable
-  mount_uploader :avatar, AvatarUploader
   
   default_scope -> { includes(:user).order(created_at: :desc) }
   

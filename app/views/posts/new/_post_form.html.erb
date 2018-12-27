@@ -19,8 +19,6 @@
 	           class: 'form-control' %>
   <%= f.text_field :deadline,
                     placeholder: 'date/month/year'  %>
-    <%= f.label :image %>
-    <%= f.file_field :avatar %>
   <%= f.collection_select :category_id, @categories, :id, :name, class: 'form-control' %>
   <%= f.submit "Create a post", class: 'form-control' %>
 <% end %>

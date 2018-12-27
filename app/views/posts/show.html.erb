@@ -4,10 +4,6 @@
       <div class="posted-by">Posted by <%= @post.user.name %></div>
       <h3><%= @post.title %></h3>
       <p><%= @post.content %></p>
-      <p>
-    <strong>Image:</strong>
-    <%= image_tag(current_path, alt: 'Image') if @post.avatar? %>
-  </p>
       <%=link_to like_post_path(@post), method: :put, class: 'btn btn-default btn-sm' do %>
       <span class="glyphicon glyphicon-chevron-up"></span>
       like <%=@post.get_upvotes.size%></td>
