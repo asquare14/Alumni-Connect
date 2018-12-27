@@ -15,5 +15,7 @@
                   placeholder: 'Describe what you are looking for. E.g. specific interests, expertise level, etc.', 
                   class: 'form-control' %>
   <%= f.collection_select :category_id, @categories, :id, :name, class: 'form-control' %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
   <%= f.submit "Create a post", class: 'form-control' %>
 <% end %>
