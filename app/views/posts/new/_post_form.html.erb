@@ -20,5 +20,7 @@
   <%= f.text_field :deadline,
                     placeholder: 'date/month/year'  %>
   <%= f.collection_select :category_id, @categories, :id, :name, class: 'form-control' %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
   <%= f.submit "Create a post", class: 'form-control' %>
 <% end %>
