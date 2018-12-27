@@ -1,18 +1,10 @@
 <% if !user_signed_in? %>
-<!-- <li>
-  <%= link_to 'Login', login_path  %>
-</li>
-<li>
-  <%= link_to 'Signup', signup_path %>
-</li> -->
 <%= react_component("LandingIndex") %>
 
 <% else %>
 <%= render 'posts/modal' %>
-
-<div class="row">
-  <!-- <%= render 'pages/index/side_menu' %> -->
+<div class="main-content-page">
   <%= render 'pages/index/main_content' %>
+  <%= render 'pages/index/right_menu' %>
 </div>
-
 <% end %>

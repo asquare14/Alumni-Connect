@@ -1,12 +1,12 @@
-<div class="branch-search">
+<div class="branch-search-form">
   <%= form_tag(send("#{branch}_posts_path"), 
                :method => "get", 
-               class: "search-form col-sm-5") do %>
+               class: "search-form") do %>
   <i class="fa fa-search" aria-hidden="true"></i>
   <%= text_field_tag  :search, 
                         params[:search], 
                         placeholder: search_placeholder, 
-                        class: "form-control " %>
+                        class: "form-control" %>
   <%= render category_field_partial_path %>
   <% end %>
 </div><!-- col-sm-12 -->

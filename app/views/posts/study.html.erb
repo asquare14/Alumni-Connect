@@ -1,6 +1,32 @@
-<%= render 'posts/modal' %>
 <%= render partial: 'posts/branch', locals: { 
     branch: 'study',
-    page_title: 'Find a job',
-    search_placeholder: 'E.g. internship, full-time, summer internship'
+    page_title: 'Find a job suitable for you',
+    search_placeholder: 'E.g. Summer Internship'
   } %>
+<!-- <div style="margin-left: 500px">
+  <h1>Listing articles</h1>
+
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+      <th></th>
+    </tr>
+    <% @posts.each do |post| %>
+    <tr>
+      <td>
+        <%= post.title %>
+      </td>
+      <td>
+        <%= post.content %>
+      </td>
+      <td>
+        <%= post.user.name %>
+      </td>
+      <td>
+        <%= link_to "I'm interested", post_path(post.id), class: 'interested' %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div> -->
