@@ -8,8 +8,7 @@
       height:12%;
       padding: 0.75%;
       display: flex;
-        box-shadow: 0 8px 20px -6px rgb(160, 145, 145);
-      //box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+      box-shadow: 0 8px 20px -6px rgb(160, 145, 145);
 
       .branch-search-form{
         width: 60%;
@@ -27,14 +26,17 @@
       display: grid;
       grid-template-columns: repeat(2, 49%);
       grid-auto-flow: dense;
+      grid-auto-rows: auto;
       row-gap: 0.5%;
       column-gap: 2%;
 
       #feed-child{
+        position: relative;
         border: 1px solid $backgroundColor;
         padding: 2%;
         background-color: white;
         box-shadow: 0 8px 20px -6px rgb(160, 145, 145);
+        padding-bottom: 40px;
 
         .feed-child-head{
           display: flex;
@@ -52,8 +54,17 @@
           font-weight: bold;
         }
 
+        .venue-margin{
+          margin-bottom: 10%;
+        }
+
         p{
           overflow-wrap: break-word;
+        }
+        .feed-child-bottom{
+          position: absolute;
+          bottom: 0;
+          height: 35px;
         }
       }
     }
@@ -88,7 +99,6 @@
   border-radius: 5px;
   background-color: #ffd8a8;  
   color: #d9480f;
-  //height: 50%;
 
   //min-height: 45px;
   //max-height: 45px;
