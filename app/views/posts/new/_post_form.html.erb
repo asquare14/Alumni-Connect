@@ -14,6 +14,12 @@
                   maxlength: 1000,
                   placeholder: 'Describe what you are looking for. E.g. specific interests, expertise level, etc.', 
                   class: 'form-control' %>
+  <% if @branch == 'hobby' %>
+    <%= f.text_field  :venue, 
+                      maxlength: 100, 
+                      placeholder: 'Venue', 
+                      class: 'form-control' %>
+  <% end %>
   <%= f.collection_select :category_id, @categories, :id, :name, class: 'form-control' %>
   <%= f.submit "Create a post", class: 'form-control' %>
 <% end %>
