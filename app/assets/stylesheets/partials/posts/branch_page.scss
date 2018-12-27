@@ -28,6 +28,10 @@
       grid-auto-rows: 200px;
       row-gap: 2%;
       column-gap: 2%;
+
+      #feed-child{
+        border: 1px solid black;
+      }
     }
     
     .search-form {

@@ -18,9 +18,15 @@
 
 
         <div id="feed">
-            <%= render  @posts %>
+            <% @posts.each do |post| %>
+            <div id="feed-child">
+                <%= post.title %>
+                <%= post.content %>
+                <%= post.user.name %>
+                <%= link_to "I'm interested", post_path(post.id), class: 'interested' %>
+            </div>
+            <% end %>
         </div>
-
 
         <div class="infinite-scroll">
             <%= will_paginate @posts %>
