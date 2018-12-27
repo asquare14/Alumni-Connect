@@ -26,12 +26,21 @@
       display: grid;
       grid-template-columns: repeat(2, 49%);
       grid-auto-flow: dense;
-      row-gap: 1%;
+      row-gap: 0.5%;
       column-gap: 2%;
 
       #feed-child{
-        border: 1px solid black;
+        border: 1px solid rgb(214, 205, 205);
         padding: 2%;
+
+        .feed-child-title{
+          font-weight: bold;
+          text-align: center;
+        }
+        
+        .feed-child-venue{
+          font-weight: bold;
+        }
 
         p{
           overflow-wrap: break-word;
@@ -195,4 +204,9 @@
 .image-uploaded{
   width: 400px;
   height: 250px;
+}
+.image-center{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }

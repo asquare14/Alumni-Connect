@@ -21,23 +21,34 @@
             <% @posts.each do |post| %>
             <div id="feed-child">
                 <p>
+                    <span class="feed-child-venue">Posted by:</span>
                     <%= post.user.name %>
                 </p>
-                <p>
+                <p class="feed-child-title">
                     <%= post.title %>
                 </p>
                 <p>
                     <%= post.content %>
                 </p>
+
+                <% if post.image? %>
+                <%=link_to( image_tag(post.image.url, alt: 'Image', class: 'image-uploaded image-center'), post.rel_link, remote: true) %>
+                <% else %>
                 <p>
-                    Venue:
-                    <%= post.venue %>
+                    <%= link_to "Link to the website", post.rel_link, remote: true %>
                 </p>
-                <%= post.rel_link %>
+                <% end %>
+
+                <!-- <%= image_tag(post.image.url, alt: 'Image', class: 'image-uploaded image-center') if post.image? %> -->
                 <p>
+                    <span class="feed-child-venue">Date:</span>
                     <%= post.deadline %>
                 </p>
-                <%= image_tag(post.image.url, alt: 'Image', class: 'image-uploaded') if post.image? %>
+                <p>
+                    <span class="feed-child-venue">Venue:</span>
+                    <%= post.venue %>
+                </p>
+
                 <%= link_to "I'm interested", post_path(post.id), class: 'interested' %>
             </div>
             <% end %>
