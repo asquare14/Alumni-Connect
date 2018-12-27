@@ -24,13 +24,19 @@
     #feed {
       background-color: white;
       display: grid;
-      grid-template-columns: repeat(2, 50%);
-      grid-auto-rows: 200px;
-      row-gap: 2%;
+      grid-template-columns: repeat(2, 49%);
+      grid-auto-flow: dense;
+      row-gap: 1%;
       column-gap: 2%;
 
       #feed-child{
         border: 1px solid black;
+        padding: 2%;
+
+        p{
+          overflow-wrap: break-word;
+          
+        }
       }
     }
     
@@ -64,6 +70,7 @@
   border-radius: 5px;
   background-color: #ffd8a8;  
   color: #d9480f;
+  //height: 50%;
 
   //min-height: 45px;
   //max-height: 45px;
@@ -187,5 +194,5 @@
   
 .image-uploaded{
   width: 400px;
-  height: 300px;
+  height: 250px;
 }

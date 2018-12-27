@@ -20,9 +20,24 @@
         <div id="feed">
             <% @posts.each do |post| %>
             <div id="feed-child">
-                <%= post.title %>
-                <%= post.content %>
-                <%= post.user.name %>
+                <p>
+                    <%= post.user.name %>
+                </p>
+                <p>
+                    <%= post.title %>
+                </p>
+                <p>
+                    <%= post.content %>
+                </p>
+                <p>
+                    Venue:
+                    <%= post.venue %>
+                </p>
+                <%= post.rel_link %>
+                <p>
+                    <%= post.deadline %>
+                </p>
+                <%= image_tag(post.image.url, alt: 'Image', class: 'image-uploaded') if post.image? %>
                 <%= link_to "I'm interested", post_path(post.id), class: 'interested' %>
             </div>
             <% end %>
