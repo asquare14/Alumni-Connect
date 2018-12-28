@@ -3,42 +3,56 @@
 
         <%= render 'posts/branch/search_form',
                             branch: 'study',
-                            search_placeholder: 'search_placeholder' %>
+                            search_placeholder: 'Eg. Jobs, Internships...' %>
         <%= render 'posts/branch/create_new_post', branch: 'study' %>
 
     </div>
 
-   <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
-<div class="container">
-  <% @posts.each do |post| %>
-  <div class="well">
-      <div class="media">
-      	<a class="pull-left" href="#">
-    		<img class="media-object" src="http://placekitten.com/150/150">
-  		</a>
-  		<div class="media-body">
-    		<h4 class="media-heading"><%= post.title %></h4>
-          <p class="text-left"> Posted By <%= post.user.name %></p>
-          <p><%= post.content %></p>
-          <p><%= link_to "I'm interested", post_path(post.id), class: 'interested' %></p>
-          <ul class="list-inline list-unstyled">
-  			<li><span><i class="glyphicon glyphicon-calendar"></i>Add to Calendar</span></li>
-            <li>|</li>
-            <span><i class="glyphicon glyphicon-comment"></i> Link to comments</span>
-            <li>|</li>
-            <%=link_to like_post_path(post.id), method: :put, class: 'btn btn-default btn-sm' do %>
-            <span class="glyphicon glyphicon-chevron-up"></span>
-            like
-           <%= post.get_upvotes.size%>
-            <% end %>
-			</ul>
-       </div>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
+    <div>
+        <% @posts.each do |post| %>
+        <div class="well">
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="http://placekitten.com/150/150">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">
+                        <%= post.title %>
+                    </h4>
+                    <p class="text-left"> Posted By
+                        <%= post.user.name %>
+                    </p>
+                    <p>
+                        <%= post.content %>
+                    </p>
+                    <p>
+                        <%= link_to "I'm interested", post_path(post.id), class: 'interested' %>
+                    </p>
+                    <ul class="list-inline list-unstyled">
+                        <li><a href="https://calendar.google.com/calendar/r/eventedit?
+                                                            text=My+Custom+Event&
+                                                            dates=20180512T230000Z/20180513T030000Z&
+                                                            details=Add Description here
+                                                            &location=MyLocation"><span>
+
+                                    <i class="glyphicon glyphicon-calendar"></i>Add to Calendar</span></a></li>
+                        <li>|</li>
+                        <span><i class="glyphicon glyphicon-comment"></i> Link to comments</span>
+                        <li>|</li>
+                        <%=link_to like_post_path(post.id), method: :put, class: 'btn btn-default btn-sm' do %>
+                        <span class="glyphicon glyphicon-chevron-up"></span>
+                        like
+                        <%= post.get_upvotes.size%>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <% end %>
     </div>
-  </div>
-    <% end %>
-   </div>
