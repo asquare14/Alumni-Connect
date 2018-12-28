@@ -48,7 +48,7 @@
     categories = Category.all
   
     categories.each do |category|
-      3.times do
+      1.times do
         Post.create(
           title: Faker::Lorem.sentences[0], 
           content: Faker::Lorem.sentences[0], 
