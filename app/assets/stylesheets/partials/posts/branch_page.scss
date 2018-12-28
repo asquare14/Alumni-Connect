@@ -25,8 +25,8 @@
       background-color: $backgroundColor;
       display: grid;
       grid-template-columns: repeat(2, 49%);
-      grid-auto-flow: dense;
-      grid-auto-rows: auto;
+      grid-auto-flow: row;
+      //grid-auto-rows: auto;
       row-gap: 0.5%;
       column-gap: 2%;
 
@@ -63,8 +63,17 @@
         }
         .feed-child-bottom{
           position: absolute;
+          width: 96%;
           bottom: 0;
           height: 35px;
+
+          .comment-div{
+            background-color: white;
+            border: 1px solid black;
+            width: 100%;
+            height: auto;
+            margin-bottom: 10%;
+          }
         }
       }
     }
