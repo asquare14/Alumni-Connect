@@ -14,13 +14,33 @@
     <!------ Include the above in your HEAD tag ---------->
 
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
-    <div>
+    <div class="branch-posts-bar">
+        <div>
+            <%= render 'posts/branch/categories', branch: 'study' %>
+        </div>
         <% @posts.each do |post| %>
         <div class="well">
             <div class="media">
-                <a class="pull-left" href="#">
+                <!-- <a class="pull-left" href="#">
                     <img class="media-object" src="http://placekitten.com/150/150">
-                </a>
+                </a> -->
+                <div class="pull-left">
+                    <% if post.image? && post.rel_link? %>
+                    <%=link_to( image_tag(post.image.url, alt: 'Image', class: 'image-job'), post.rel_link, remote: true) %>
+                    <% else %>
+                    <% if !post.image? && post.rel_link? %>
+                    <p>
+                        <span class="feed-child-venue">Link to the website:</span>
+                        <%= link_to post.rel_link , post.rel_link, remote: true %>
+                    </p>
+                    <% else %>
+                    <% if post.image? && !post.rel_link? %>
+                    <%= image_tag(post.image.url, alt: 'Image', class: 'image-job') %>
+                    <% end %>
+                    <% end %>
+                    <% end %>
+                </div>
+
                 <div class="media-body">
                     <h4 class="media-heading">
                         <%= post.title %>
@@ -31,6 +51,12 @@
                     <p>
                         <%= post.content %>
                     </p>
+
+                    <p>
+                        <span class="feed-child-venue">Deadline to apply:</span>
+                        <%= post.deadline %>
+                    </p>
+
                     <p>
                         <%= link_to "I'm interested", post_path(post.id), class: 'interested' %>
                     </p>
