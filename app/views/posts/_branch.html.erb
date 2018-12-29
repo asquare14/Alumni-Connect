@@ -64,16 +64,18 @@
 
 
                 <div class="feed-child-bottom">
-                    <%=link_to like_post_path(post), method: :put, class: 'btn btn-default btn-sm' do %>
+                    <%=link_to like_post_path(post), method: :put, class: 'btn btn-default btn-xs' do %>
                     <span class="glyphicon glyphicon-chevron-up "></span>
                     like
                     <%=post.get_upvotes.size%>
                     </td>
                     <% end %>
 
-                    <button class="btn btn-default btn-sm comment-btn">Comment</button>
+                    <button class="btn btn-default btn-xs comment-btn">Comment</button>
 
-                    <%= link_to "I'm interested", post_path(post.id), class: 'interested' %>
+                    <button type="button" class="btn btn-basic btn-xs">
+                         <%= link_to "View Full Post", post_path(post.id), class: 'interested' %>
+                        </button>
                     <!-- <div class="comment-div">fghgfdsfgx</div> -->
                 </div>
 
