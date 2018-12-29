@@ -56,7 +56,10 @@
                     </p>
 
                     <p>
-                        <%= link_to "I'm interested", post_path(post.id), class: 'interested' %>
+                        <button type="button" class="btn btn-default btn-xs">
+                         <%= link_to "View Full Post", post_path(post.id), class: 'interested' %>
+                        </button>
+                       
                     </p>
                     <ul class="list-inline list-unstyled">
                         <li><a href="https://calendar.google.com/calendar/r/eventedit?
@@ -69,7 +72,7 @@
                         <li>|</li>
                         <span><i class="glyphicon glyphicon-comment"></i> Link to comments</span>
                         <li>|</li>
-                        <%=link_to like_post_path(post.id), method: :put, class: 'btn btn-default btn-sm' do %>
+                        <%=link_to like_post_path(post.id), method: :put, class: 'btn btn-default btn-xs' do %>
                         <span class="glyphicon glyphicon-chevron-up"></span>
                         like
                         <%= post.get_upvotes.size%>
