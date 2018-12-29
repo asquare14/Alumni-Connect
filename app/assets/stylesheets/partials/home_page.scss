@@ -47,17 +47,37 @@
   
   background-color: #0077B5;
   
+  .home-img-div{
+    height: 15%;
+ 
   .home-logo-img{
-    height: 8%;
+    height: 60%;
     margin-left:auto;
     margin-right: auto;
     background-color: #0077B5;
   }
+}
   
   #sidemenu-pic{
-    height:33%;
+    height:16%;
     background-color: white;
-    padding-top: 20%;
+    
+    .profile-pic-img{
+      position: absolute;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      margin-top: -50px;
+      margin-left: 26%;
+    }
+    #user-name{
+      position: absolute;
+      margin-top: 25%;
+      margin-left: 36%;
+      font-size: 23px;
+      color: $themeColor;
+      
+    }
   }
   
   #links-list {

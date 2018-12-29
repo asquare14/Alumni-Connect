@@ -1,13 +1,15 @@
 <div id="side-menu">
-    <%= link_to root_path do %>
-    <%=  image_tag ("Linkedin.png"), class: "home-logo-img"%>
-    <% end %>
+    <div class="home-img-div">
+        <%= link_to root_path do %>
+        <%=  image_tag ("Linkedin.png"), class: "home-logo-img"%>
+        <% end %>
+    </div>
 
     <div id="sidemenu-pic">
-        Pic to be shown
+        <%= image_tag ("profilepic.jpg"), class: "profile-pic-img" %>
         <span id="user-name">
+            <%= current_user.name %>
         </span>
-
     </div>
 
     <ul id="links-list">
