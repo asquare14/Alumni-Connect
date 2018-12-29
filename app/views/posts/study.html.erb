@@ -45,9 +45,7 @@
                     <h3 class="media-heading">
                         <%= post.title %>
                     </h3>
-                    <p class="text-left"> Posted By
-                        <%= post.user.name %>
-                    </p>
+                    <p class="lead"><a href=<%=post.user.linkedin%>><span class="badge badge-info">Posted by <%= post.user.name %></span></a>
                     <p>
                         <%= post.content %>
                     </p>
