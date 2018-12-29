@@ -41,6 +41,7 @@ gem "webpacker", "~> 3"
 gem 'bootstrap_form'
 gem 'mini_racer', platforms: :ruby
 gem 'carrierwave', '~> 1.0'
+gem 'rails_admin', '~> 1.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

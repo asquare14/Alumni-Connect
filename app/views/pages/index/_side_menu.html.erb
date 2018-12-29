@@ -33,7 +33,13 @@
             <i class="fa fa-users" aria-hidden="true"></i> Click to join group
             <% end %>
         </li>
-
+        <% if current_user.admin == true %>
+        <li id="Admin Dashboard">
+            <%= link_to rails_admin_path do%>
+            <i class="fa fa-sign-out" aria-hidden="true"></i> Admin dashboard
+            <% end %>
+        </li>
+        <% end %>
         <li id="logout">
             <%= link_to destroy_user_session_path, method: :delete do%>
             <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
