@@ -17,15 +17,16 @@
       <%= f.text_field :email, 
 	           placeholder: 'email', 
 	           class: 'form-control' %>
-
-      <%= f.text_field :institute, 
-	           placeholder: 'institute', 
-	           class: 'form-control' %>
-
-      <%= f.text_field :graduation, 
-	           placeholder: 'Year of Graduation', 
-	           class: 'form-control' %>
-
+      <%= f.select(:institute, 
+                    options_for_select(
+                    [['IITR', 'IITR'], 
+                    ['IIITB', 'IIITB']]), 
+                    { include_blank: true }) %>
+      <%= f.select(:graduation, 
+                    options_for_select(
+                    [['2019', '2019'], 
+                    ['2020', '2020'],['2021', '2021']]), 
+                    { include_blank: true }) %>
       <%= f.text_field :branch, 
 	           placeholder: 'Department', 
 	           class: 'form-control' %>
