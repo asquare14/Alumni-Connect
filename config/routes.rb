@@ -27,5 +27,11 @@ Rails.application.routes.draw do
    end   
 
   resources :groups
-  root to: 'pages#index'
+  
+  authenticated :user do
+    root 'posts#hobby', as: :authenticated_root
+  end
+
+  root 'pages#index'
+
 end
