@@ -36,9 +36,16 @@ class PostsController < ApplicationController
     def upvote
         @post = Post.find(params[:id])
         @post.upvote_by current_user
-        redirect_to study_posts_path 
+        category = Category.find_by(id: @post.category_id)
+        branch_of = category.branch
+        if branch_of == 'study'
+            redirect_to study_posts_path
+        end
+        if branch_of == 'hobby'
+            redirect_to hobby_posts_path
+        end
     end
-       
+    
     def downvote
         @post = Post.find(params[:id])
         @post.unliked_by current_user
