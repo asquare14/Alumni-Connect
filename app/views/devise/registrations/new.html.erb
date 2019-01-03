@@ -16,12 +16,26 @@
 
       <%= f.text_field :email, 
 	           placeholder: 'email', 
-	           class: 'form-control' %>
+             class: 'form-control' %>
+
+      <%= f.select(:school_student, 
+                          options_for_select(
+                          [['No', 'No'], 
+                          ['Yes', 'Yes']]), 
+                          { include_blank: false }, class: 'school-student-dropdown') %>
+
+      <%= f.select(:institute,
+                          options_for_select(
+                          [['St. Josephs', 'St. Josephs'], 
+                          ['DPS', 'DPS']]), 
+                          { include_blank: true }, class: 'school-field') %>
+
       <%= f.select(:institute, 
                     options_for_select(
                     [['IITR', 'IITR'], 
                     ['IIITB', 'IIITB']]), 
-                    { include_blank: true }) %>
+                    { include_blank: true }, class: 'institute-field') %>
+
       <%= f.select(:graduation, 
                     options_for_select(
                     [['2019', '2019'], 
