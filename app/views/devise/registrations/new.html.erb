@@ -24,17 +24,21 @@
                           ['Yes', 'Yes']]), 
                           { include_blank: false }, class: 'school-student-dropdown') %>
 
-      <%= f.select(:institute,
+      <div class="school-field">
+        <%= f.select(:institute,
                           options_for_select(
                           [['St. Josephs', 'St. Josephs'], 
                           ['DPS', 'DPS']]), 
-                          { include_blank: true }, class: 'school-field') %>
+                          { include_blank: true }) %>
+      </div>
 
-      <%= f.select(:institute, 
+      <div class="institute-field">
+        <%= f.select(:institute, 
                     options_for_select(
                     [['IITR', 'IITR'], 
                     ['IIITB', 'IIITB']]), 
-                    { include_blank: true }, class: 'institute-field') %>
+                    { include_blank: true }) %>
+      </div>
 
       <%= f.select(:graduation, 
                     options_for_select(
