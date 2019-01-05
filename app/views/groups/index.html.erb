@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,46 +7,33 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+</head> -->
 
-<body>
-  <div style="margin-left: 500px">
-    <h2></br></h2>
-    <table class="table table-bordered" style="width: auto">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Year of Graduation</th>
-          <th>Branch</th>
-          <th>Company</th>
-        </tr>
-      </thead>
-      <tbody>
-        Your College Group is <strong>
-          <%= @group.name %></strong>. Members in your group are :
-        <% @group.users.each do |user| %>
-        <tr>
-          <td><a href=<%=user.linkedin%>>
-              <%= user.name %></a></td>
-          <td>
-            <%= user.email %>
-          </td>
-          <td>
-            <%= user.graduation %>
-          </td>
-          <td>
-            <%= user.branch %>
-          </td>
-          <td>
-            <%= user.company %>
-          </td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+<div class="grp-parent">
+  Your College Group is <strong>
+    <%= @group.name %></strong>. Members in your group are :
+  <div class="grp-main-content">
+
+    <div class="grp-feed">
+      <% @group.users.each do |user| %>
+      <div class="grp-feed-child">
+        <a href=<%=user.linkedin%>>
+          <%= user.name %></a>
+        <p>
+          <%= user.email %>
+        </p>
+        <p>
+          <%= user.graduation %>
+        </p>
+        <p>
+          <%= user.branch %>
+        </p>
+        <p>
+          <%= user.company %>
+        </p>
+      </div>
+      <% end %>
+    </div>
   </div>
 
-</body>
-
-</html>
+</div>

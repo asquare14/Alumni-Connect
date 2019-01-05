@@ -1,0 +1,27 @@
+.grp-parent{
+    background-color: white;
+    
+    .grp-main-content{
+        background-color: white;
+        margin-left: 25%;
+        margin-top: 3%;
+        margin-right: 13%;
+        //border: 1px solid black;
+        height: auto;
+
+        
+        .grp-feed{
+            background-color: white;
+            display: grid;
+            grid-template-columns: repeat(3, 33.35%);
+            //grid-auto-flow: row;
+            grid-template-rows: repeat(10, 50vh);
+            top: 0;
+
+            .grp-feed-child{
+                border: 1px solid rgb(218, 218, 221);
+            }
+            
+        }
+    }
+}
