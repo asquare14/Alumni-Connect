@@ -57,6 +57,7 @@ class PostsController < ApplicationController
     def posts_for_branch(branch)
         @categories = Category.where(branch: branch)
         @posts = get_posts.paginate(page: params[:page])
+        @posts = @posts.where(user_id: User.where(institute: current_user.institute).pluck(:id))
         respond_to do |format|
             format.html
             format.js { render partial: 'posts/posts_pagination_page' }
