@@ -8,7 +8,7 @@
       height:12%;
       padding: 0.75%;
       display: flex;
-      box-shadow: 0 8px 20px -6px rgb(160, 145, 145);
+      box-shadow: 0 8px 20px -15px rgb(160, 145, 145);
 
       .branch-search-form{
         width: 60%;
@@ -35,7 +35,7 @@
         border: 1px solid $backgroundColor;
         padding: 2%;
         background-color: white;
-        box-shadow: 0 8px 20px -6px rgb(160, 145, 145);
+        box-shadow: 0 8px 20px -10px rgb(160, 145, 145);
         padding-bottom: 40px;
 
         .feed-child-head{
@@ -250,4 +250,15 @@
 .image-job{
   width: 250px;
   height : 180px;
+}
+
+/* study */
+#feed-job{
+  background-color: $backgroundColor;
+}
+
+#feed-child-job{
+  background-color: white;
+  box-shadow: 0 8px 20px -10px rgb(160, 145, 145);
+
 }
