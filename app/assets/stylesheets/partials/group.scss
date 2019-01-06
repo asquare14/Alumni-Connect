@@ -1,26 +1,80 @@
 .grp-parent{
     background-color: white;
+    padding-top: 4%;
+
+    .grp-heading{
+        margin-left: 25%;
+        margin-right: 13%;
+
+        p{
+            font-size: 1.7em;
+        }
+    }
     
     .grp-main-content{
         background-color: white;
         margin-left: 25%;
         margin-top: 3%;
         margin-right: 13%;
-        //border: 1px solid black;
         height: auto;
-
+        
         
         .grp-feed{
             background-color: white;
             display: grid;
             grid-template-columns: repeat(3, 33.35%);
-            //grid-auto-flow: row;
+            border: 1px solid rgb(214, 214, 214);
             grid-template-rows: repeat(10, 50vh);
             top: 0;
-
+            
             .grp-feed-child{
-                border: 1px solid rgb(218, 218, 221);
+                border: 0.25px solid rgb(221, 220, 220);
+                
+                .grp-child{
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 100%;
+                    margin-top: 10%;
+                    
+                    .profile-pic-img{
+                        height: 140px;
+                        width: 140px;
+                        border-radius: 50%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        display: block;
+                    }
+                    
+                    .grp-child-content{
+                        margin-top: 9%;
+                        
+                        .grp-child-name{
+                            font-weight: bold;
+                            font-size: 1.5em;
+                            
+                        }
+                        .grp-graduate{
+                            display: flex;
+                            justify-content: center;
+                               
+                        }
+                        
+                        p{
+                            text-align: center;
+                            overflow-wrap: break-word;
+                            line-height: 0.8;
+                            color: rgb(78, 78, 78);
+                        }
+                    }
+                    
+                }
+                &:hover{
+                    border-bottom: 5px solid $themeColor;    
+                }
+                
+                
             }
+            
             
         }
     }

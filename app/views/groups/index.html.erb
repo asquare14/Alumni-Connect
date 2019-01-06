@@ -10,27 +10,39 @@
 </head> -->
 
 <div class="grp-parent">
-  Your College Group is <strong>
-    <%= @group.name %></strong>. Members in your group are :
+  <div class="grp-heading">
+    <p>
+      Your College Group is <strong>
+        <%= @group.name %></strong>. Members in your group are :
+    </p>
+  </div>
   <div class="grp-main-content">
 
     <div class="grp-feed">
       <% @group.users.each do |user| %>
       <div class="grp-feed-child">
-        <a href=<%=user.linkedin%>>
-          <%= user.name %></a>
-        <p>
-          <%= user.email %>
-        </p>
-        <p>
-          <%= user.graduation %>
-        </p>
-        <p>
-          <%= user.branch %>
-        </p>
-        <p>
-          <%= user.company %>
-        </p>
+        <div class="grp-child">
+          <div>
+            <%= image_tag ("profilepic.jpg"), class: "profile-pic-img" %>
+          </div>
+          <div class="grp-child-content">
+            <p class="grp-child-name">
+              <a href=<%=user.linkedin%>>
+                <%= user.name %></a>
+            </p>
+            <p>
+              <%= user.company %>
+            </p>
+            <div class="grp-graduate">
+              <p><i>Graduation year&nbsp</i></p>
+              <p>
+                <i>
+                  <%=  user.graduation %></i>
+              </p>
+            </div>
+
+          </div>
+        </div>
       </div>
       <% end %>
     </div>
