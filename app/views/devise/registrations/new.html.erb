@@ -46,7 +46,8 @@
       <%= f.password_field :password_confirmation, 
                        placeholder: 'password confirmation', 
                        class: 'form-control' %>
-
+      <%= f.label :dp %>
+      <%= f.file_field :dp %>
       <%= f.submit 'Sign up', class: 'btn sign-up-button' %>
       <% end %>
 

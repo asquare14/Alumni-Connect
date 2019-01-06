@@ -11,7 +11,8 @@ class RegistrationsController < Devise::RegistrationsController
                                     :linkedin,
                                     :company, 
                                     :password, 
-                                    :password_confirmation)
+                                    :password_confirmation,
+                                    :dp)
     end
   
     def account_update_params
