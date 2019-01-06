@@ -8,7 +8,7 @@
     <div id="sidemenu-pic">
         <div>
             <div class="pic-div">
-                <%= image_tag(current_user.dp.url, alt: 'Image') if current_user.dp? %>
+                <%= image_tag(current_user.dp.thumb.url, alt: 'Image') if current_user.dp? %>
             </div>
             <p><span id="user-name">
                     <a href=<%=current_user.linkedin%>>
