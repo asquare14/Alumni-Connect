@@ -32,6 +32,19 @@ class PostsController < ApplicationController
         end
     end
 
+    def edit
+		@post = Post.find(params[:id])
+	end
+
+	def update
+		@post = Post.find(params[:id])
+		if @post.update(params[:post].permit(:content, :title, :category_id, :deadline, :rel_link,:image,:venue))
+			redirect_to @post
+		else
+			render 'edit'
+        end
+    end
+
     def destroy
         @post = Post.find(params[:id])
         @post.destroy
