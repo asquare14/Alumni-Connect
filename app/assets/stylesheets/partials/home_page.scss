@@ -49,35 +49,46 @@
   
   .home-img-div{
     height: 15%;
- 
-  .home-logo-img{
-    height: 60%;
-    margin-left:auto;
-    margin-right: auto;
-    background-color: #0077B5;
+    
+    .home-logo-img{
+      height: 60%;
+      margin-left:auto;
+      margin-right: auto;
+      background-color: #0077B5;
+    }
   }
-}
   
   #sidemenu-pic{
     height:16%;
     background-color: white;
     
-    .profile-pic-img{
-      position: absolute;
+    .pic-div{
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      //border: 3px solid black;
+      width: 50%;
+    }
+    
+    .profile-pic-img{ 
       height: 100px;
       width: 100px;
       border-radius: 50%;
-      margin-top: -50px;
-      margin-left: 26%;
+      margin-top: -50px;         
     }
+    
     #user-name{
-      position: absolute;
-      margin-top: 25%;
-      margin-left: 36%;
-      font-size: 23px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      text-align: center;
+      width: 50%;
+      font-size: 1.2em;
+      font-weight: bold;
       color: $themeColor;
-      
+      overflow-wrap: break-word;
     }
+    
   }
   
   #links-list {
