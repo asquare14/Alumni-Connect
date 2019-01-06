@@ -1,4 +1,4 @@
-<div class="branch-main-content">
+<div class="branch-main-content" id="feed-job">
     <div class="branch-search-bar">
 
         <%= render 'posts/branch/search_form',
@@ -18,68 +18,72 @@
         <div>
             <%= render 'posts/branch/categories', branch: 'study' %>
         </div>
-        <% @posts.each do |post| %>
-        <div class="well">
-            <div class="media">
-                <!-- <a class="pull-left" href="#">
+
+        <div>
+            <% @posts.each do |post| %>
+            <div class="well" id="feed-child-job">
+                <div class="media">
+                    <!-- <a class="pull-left" href="#">
                     <img class="media-object" src="http://placekitten.com/150/150">
                 </a> -->
-                <div class="pull-left">
-                    <% if post.image? && post.rel_link? %>
-                    <%=link_to( image_tag(post.image.url, alt: 'Image', class: 'image-job'), post.rel_link, remote: true) %>
-                    <% else %>
-                    <% if !post.image? && post.rel_link? %>
-                    <p>
-                        <span class="feed-child-venue">Link to the website:</span>
-                        <%= link_to post.rel_link , post.rel_link, remote: true %>
-                    </p>
-                    <% else %>
-                    <% if post.image? && !post.rel_link? %>
-                    <%= image_tag(post.image.url, alt: 'Image', class: 'image-job') %>
-                    <% end %>
-                    <% end %>
-                    <% end %>
-                </div>
+                    <div class="pull-left">
+                        <% if post.image? && post.rel_link? %>
+                        <%=link_to( image_tag(post.image.url, alt: 'Image', class: 'image-job'), post.rel_link, remote: true) %>
+                        <% else %>
+                        <% if !post.image? && post.rel_link? %>
+                        <p>
+                            <span class="feed-child-venue">Link to the website:</span>
+                            <%= link_to post.rel_link , post.rel_link, remote: true %>
+                        </p>
+                        <% else %>
+                        <% if post.image? && !post.rel_link? %>
+                        <%= image_tag(post.image.url, alt: 'Image', class: 'image-job') %>
+                        <% end %>
+                        <% end %>
+                        <% end %>
+                    </div>
 
-                <div class="media-body">
-                    <h3 class="media-heading">
-                        <%= post.title %>
-                    </h3>
-                    <p class="lead"><a href=<%=post.user.linkedin%>><span class="badge badge-info">Posted by <%= post.user.name %></span></a>
-                    <p>
-                        <%= post.content %>
-                    </p>
+                    <div class="media-body">
+                        <h3 class="media-heading">
+                            <%= post.title %>
+                        </h3>
+                        <p class="lead"><a href=<%=post.user.linkedin%>><span class="badge badge-info">Posted by
+                                    <%= post.user.name %></span></a>
+                            <p>
+                                <%= post.content %>
+                            </p>
 
-                    <p>
-                        <span class="feed-child-venue">Deadline to apply:</span>
-                        <%= post.deadline %>
-                    </p>
+                            <p>
+                                <span class="feed-child-venue">Deadline to apply:</span>
+                                <%= post.deadline %>
+                            </p>
 
-                    <p>
-                        <button type="button" class="btn btn-default btn-xs">
-                         <%= link_to "View Full Post", post_path(post.id), class: 'interested' %>
-                        </button>
-                       
-                    </p>
-                    <ul class="list-inline list-unstyled">
-                        <li><a href="https://calendar.google.com/calendar/r/eventedit?
+                            <p>
+                                <button type="button" class="btn btn-default btn-xs">
+                                    <%= link_to "View Full Post", post_path(post.id), class: 'interested' %>
+                                </button>
+
+                            </p>
+                            <ul class="list-inline list-unstyled">
+                                <li><a href="https://calendar.google.com/calendar/r/eventedit?
                                                             text=My+Custom+Event&
                                                             dates=20180512T230000Z/20180513T030000Z&
                                                             details=Add Description here
                                                             &location=MyLocation"><span>
 
-                                    <i class="glyphicon glyphicon-calendar"></i>Add to Calendar</span></a></li>
-                        <li>|</li>
-                        <span><i class="glyphicon glyphicon-comment"></i> Link to comments</span>
-                        <li>|</li>
-                        <%=link_to like_post_path(post.id), method: :put, class: 'btn btn-default btn-xs' do %>
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                        like
-                        <%= post.get_upvotes.size%>
-                        <% end %>
-                    </ul>
+                                            <i class="glyphicon glyphicon-calendar"></i>Add to Calendar</span></a></li>
+                                <li>|</li>
+                                <span><i class="glyphicon glyphicon-comment"></i> Link to comments</span>
+                                <li>|</li>
+                                <%=link_to like_post_path(post.id), method: :put, class: 'btn btn-default btn-xs' do %>
+                                <span class="glyphicon glyphicon-chevron-up"></span>
+                                like
+                                <%= post.get_upvotes.size%>
+                                <% end %>
+                            </ul>
+                    </div>
                 </div>
             </div>
+            <% end %>
         </div>
-        <% end %>
     </div>

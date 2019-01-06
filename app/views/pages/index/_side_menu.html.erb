@@ -6,11 +6,16 @@
     </div>
 
     <div id="sidemenu-pic">
-        <%= image_tag ("profilepic.jpg"), class: "profile-pic-img" %>
-        <span id="user-name">
-            <a href=<%=current_user.linkedin%>>
-              <%= current_user.name %></a>
-        </span>
+        <div>
+            <div class="pic-div">
+                <%= image_tag ("profilepic.jpg"), class: "profile-pic-img" %>
+            </div>
+            <p><span id="user-name">
+                    <a href=<%=current_user.linkedin%>>
+                        <%= current_user.name %></a>
+                </span>
+            </p>
+        </div>
     </div>
 
     <ul id="links-list">
