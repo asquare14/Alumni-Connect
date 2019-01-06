@@ -26,6 +26,9 @@
       <%=@post.get_upvotes.size%>
       </td>
       <% end %>
+      <% if current_user.id == @post.user.id %>
+      <p><%= link_to 'Delete', @post, :confirm => 'Are you sure?', :method => :delete %></p>
+      <% end %>
       <h4>Comments</h4>
       <% @post.comments.each do |comment| %>
       <p>

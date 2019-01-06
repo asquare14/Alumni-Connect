@@ -32,6 +32,16 @@ class PostsController < ApplicationController
         end
     end
 
+    def destroy
+        @post = Post.find(params[:id])
+        @post.destroy
+       
+        respond_to do |format|
+          format.html { redirect_to root_path }
+          format.json { head :ok }
+        end
+    end
+
 
     def upvote
         @post = Post.find(params[:id])
