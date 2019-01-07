@@ -3,12 +3,12 @@ class RegistrationsController < Devise::RegistrationsController
     
 
     def mentor
-      @users = User.where(institute: current_user.institute).pluck(:id)
+      @user = User.where(id: current_user.id)
     end
 
 
     def mentee
-      @users = User.where(institute: current_user.institute).pluck(:id)
+      @user = User.where(id: current_user.id)
     end
 
     private
