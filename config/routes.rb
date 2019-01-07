@@ -9,11 +9,13 @@ Rails.application.routes.draw do
     get 'login', to: 'devise/sessions#new'
     get 'signup', to: 'devise/registrations#new'
     get 'mentor', to: 'devise/registrations#mentor'
+    get 'mentee', to: 'devise/registrations#mentee'
   end
 
   resource :registrations do
     devise_scope :user do
       get 'mentor'
+      get 'mentee'
     end
   end
 

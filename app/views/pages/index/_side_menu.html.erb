@@ -47,6 +47,12 @@
             <i class="fa fa-users" aria-hidden="true"></i> Mentor Someone
             <% end %>
         </li>
+
+        <li id="team">
+            <%= link_to mentee_registrations_path do %>
+            <i class="fa fa-users" aria-hidden="true"></i> Get Mentorship
+            <% end %>
+        </li>
         
         <% if current_user.admin == true %>
         <li id="Admin Dashboard">
