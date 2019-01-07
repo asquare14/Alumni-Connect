@@ -12,7 +12,8 @@ class RegistrationsController < Devise::RegistrationsController
                                     :company, 
                                     :password, 
                                     :password_confirmation,
-                                    :dp)
+                                    :dp,
+                                    expertise_ids:[])
     end
   
     def account_update_params
@@ -22,6 +23,9 @@ class RegistrationsController < Devise::RegistrationsController
                                     :password, 
                                     :password_confirmation, 
                                     :current_password)
+    end
+
+    def mentor
     end
 end
   
