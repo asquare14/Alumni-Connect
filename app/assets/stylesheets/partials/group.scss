@@ -1,11 +1,11 @@
 .grp-parent{
     background-color: white;
     padding-top: 4%;
-
+    
     .grp-heading{
         margin-left: 25%;
         margin-right: 13%;
-
+        
         p{
             font-size: 1.7em;
         }
@@ -18,14 +18,14 @@
         margin-right: 13%;
         height: auto;
         
-        
         .grp-feed{
             background-color: white;
             display: grid;
             grid-template-columns: repeat(3, 33.35%);
             border: 1px solid rgb(214, 214, 214);
-            grid-template-rows: repeat(10, 50vh);
+            grid-template-rows: repeat(3, 50vh);
             top: 0;
+            //margin-bottom: 5%;
             
             .grp-feed-child{
                 border: 0.25px solid rgb(221, 220, 220);
@@ -56,7 +56,7 @@
                         .grp-graduate{
                             display: flex;
                             justify-content: center;
-                               
+                            
                         }
                         
                         p{

@@ -1,6 +1,7 @@
 .branch-main-content {
-    height: calc(100vh - 50px);
+    height: auto;
     margin-left: 16%;
+    margin-bottom: 4%;
 
     .branch-search-bar{
       background-color: white;
@@ -26,8 +27,7 @@
       display: grid;
       grid-template-columns: repeat(2, 49%);
       grid-auto-flow: row;
-      //grid-auto-rows: auto;
-      row-gap: 0.5%;
+      row-gap: 2%;
       column-gap: 2%;
 
       #feed-child{
@@ -255,6 +255,7 @@
 /* study */
 #feed-job{
   background-color: $backgroundColor;
+  height: auto;
 }
 
 #feed-child-job{
