@@ -16,6 +16,17 @@ class PostsController < ApplicationController
     def team
         posts_for_branch(params[:action])
     end
+
+    def mentor
+        posts_for_branch(params[:action])
+        @branch = params[:branch]
+        @categories = Category.where(branch: @branch)
+        @post = Post.new
+    end
+
+    def mentee
+        posts_for_branch(params[:action])
+    end
     
     def new
         @branch = params[:branch]
