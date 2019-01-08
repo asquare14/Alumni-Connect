@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190106165638) do
+ActiveRecord::Schema.define(version: 20190107150011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 20190106165638) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
+  end
+
+  create_table "expertises", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "expertises_users", id: false, force: :cascade do |t|
+    t.bigint "expertise_id", null: false
+    t.bigint "user_id", null: false
   end
 
   create_table "groups", force: :cascade do |t|
@@ -76,6 +87,9 @@ ActiveRecord::Schema.define(version: 20190106165638) do
     t.datetime "updated_at", null: false
     t.boolean "admin"
     t.string "dp"
+    t.boolean "mentor"
+    t.boolean "mentee"
+    t.string "expertise"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
