@@ -263,3 +263,29 @@
   box-shadow: 0 8px 20px -10px rgb(160, 145, 145);
 
 }
+
+/* message */
+
+.send-message-to-user {
+  background-color: $navbarColor;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  margin-top: 10px;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.contact-user {
+  text-align: center;
+}
+
+.contacted-user {
+  display: inline-block;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: $navbarColor;
+  color: white;
+}

@@ -10,12 +10,13 @@
       <p>
         <%= @post.content %>
       </p>
-      <a href = "https://calendar.google.com/calendar/r/eventedit?
+      <%= render contact_user_partial_path %>
+      <a href="https://calendar.google.com/calendar/r/eventedit?
                 text=My+Custom+Event&
                 dates=20180512T230000Z/20180513T030000Z&
                 details=Add Description here
                 &location=MyLocation">
-      Add To Calendar
+        Add To Calendar
       </a>
       <p>
         <%= image_tag(@post.image.url, alt: 'Image', class: 'image-uploaded') if @post.image? %>
@@ -27,8 +28,12 @@
       </td>
       <% end %>
       <% if current_user.id == @post.user.id %>
-      <p><%= link_to 'Delete', @post, :confirm => 'Are you sure?', :method => :delete %></p>
-      <p><%= link_to 'Edit', edit_post_path(@post) %></p>
+      <p>
+        <%= link_to 'Delete', @post, :confirm => 'Are you sure?', :method => :delete %>
+      </p>
+      <p>
+        <%= link_to 'Edit', edit_post_path(@post) %>
+      </p>
       <% end %>
       <h4>Comments</h4>
       <% @post.comments.each do |comment| %>

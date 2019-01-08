@@ -3,6 +3,9 @@ class PostsController < ApplicationController
     
     def show
         @post = Post.find(params[:id])
+        if user_signed_in?
+            @message_has_been_sent = conversation_exist?
+        end
     end
     
     def hobby
@@ -26,16 +29,16 @@ class PostsController < ApplicationController
     def create
         @post = Post.new(post_params)
         if @post.save
-          redirect_to post_path(@post) 
+            redirect_to post_path(@post) 
         else
-          redirect_to root_path
+            redirect_to root_path
         end
     end
-
+    
     def edit
 		@post = Post.find(params[:id])
 	end
-
+    
 	def update
 		@post = Post.find(params[:id])
 		if @post.update(params[:post].permit(:content, :title, :category_id, :deadline, :rel_link,:image,:venue))
@@ -44,18 +47,18 @@ class PostsController < ApplicationController
 			render 'edit'
         end
     end
-
+    
     def destroy
         @post = Post.find(params[:id])
         @post.destroy
-       
+        
         respond_to do |format|
-          format.html { redirect_to root_path }
-          format.json { head :ok }
+            format.html { redirect_to root_path }
+            format.json { head :ok }
         end
     end
-
-
+    
+    
     def upvote
         @post = Post.find(params[:id])
         @post.upvote_by current_user
@@ -74,7 +77,7 @@ class PostsController < ApplicationController
         @post.unliked_by current_user
         redirect_to post_path(@post) 
     end
-
+    
     private
     
     def posts_for_branch(branch)
@@ -96,12 +99,16 @@ class PostsController < ApplicationController
         search = params[:search]
         category = params[:category]
         if category.blank? && search.blank?
-        posts = Post.by_branch(branch).all
+            posts = Post.by_branch(branch).all
         elsif category.blank? && search.present?
-        posts = Post.by_branch(branch).search(search)
+            posts = Post.by_branch(branch).search(search)
         elsif category.present? && search.blank?
-        posts = Post.by_category(branch, category)
+            posts = Post.by_category(branch, category)
         else
         end
+    end
+    
+    def conversation_exist?
+        Private::Conversation.between_users(current_user.id, @post.user.id).present?
     end
 end

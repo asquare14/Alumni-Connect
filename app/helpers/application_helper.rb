@@ -1,6 +1,13 @@
 require 'navigation_helper.rb'
-include ReactOnRailsHelper
-include PostsHelper
+
 module ApplicationHelper
   include NavigationHelper
+  include ReactOnRailsHelper
+  include PostsHelper
+  include Private::ConversationsHelper
+  include Private::MessagesHelper
+
+  def private_conversations_windows
+    params[:controller] != 'messengers' ? @private_conversations_windows : []
+  end
 end

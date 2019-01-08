@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <%= Gon::Base.render_data %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application' %>
   <%= stylesheet_pack_tag 'application' %>
@@ -16,6 +17,8 @@
 <body>
   <% if user_signed_in? %>
   <%= render 'pages/index/side_menu' %>
+  <%= render 'layouts/application/private_conversations_windows' %>
+
   <%= yield %>
   <% else %>
   <%= yield %>
