@@ -8,5 +8,6 @@ class User < ApplicationRecord
   has_many :groups, through: :user_groups
   mount_uploader :dp, ImageUploader
   has_and_belongs_to_many :expertises
-
+  has_many :expertise_users
+  has_many :expertises, through: :expertise_users
 end

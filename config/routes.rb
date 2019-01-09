@@ -45,5 +45,6 @@ Rails.application.routes.draw do
   end
 
   root 'pages#index'
-
+  resources :expertise_users, only: [:new, :create]
+  
 end

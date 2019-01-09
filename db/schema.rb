@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190107150011) do
+ActiveRecord::Schema.define(version: 20190109063617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,15 +29,19 @@ ActiveRecord::Schema.define(version: 20190107150011) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
+  create_table "expertise_users", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "expertise_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["expertise_id"], name: "index_expertise_users_on_expertise_id"
+    t.index ["user_id"], name: "index_expertise_users_on_user_id"
+  end
+
   create_table "expertises", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "expertises_users", id: false, force: :cascade do |t|
-    t.bigint "expertise_id", null: false
-    t.bigint "user_id", null: false
   end
 
   create_table "groups", force: :cascade do |t|
@@ -59,16 +63,6 @@ ActiveRecord::Schema.define(version: 20190107150011) do
     t.string "rel_link"
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
-  end
-
-  create_table "primarystudents", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "secstudents", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "user_groups", force: :cascade do |t|
@@ -99,7 +93,6 @@ ActiveRecord::Schema.define(version: 20190107150011) do
     t.string "dp"
     t.boolean "mentor"
     t.boolean "mentee"
-    t.string "expertise"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -119,4 +112,6 @@ ActiveRecord::Schema.define(version: 20190107150011) do
   end
 
   add_foreign_key "comments", "posts"
+  add_foreign_key "expertise_users", "expertises"
+  add_foreign_key "expertise_users", "users"
 end
