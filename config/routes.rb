@@ -46,5 +46,7 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   resources :expertise_users, only: [:new, :create]
+
+  get 'expertise_users/show_mentors', to: 'expertise_users#show_mentors'
   
 end
