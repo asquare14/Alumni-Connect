@@ -29,6 +29,10 @@ Rails.application.routes.draw do
    end   
 
   resources :groups
+
+  get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
+  get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
+  get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash  
   
   authenticated :user do
     root 'posts#hobby', as: :authenticated_root

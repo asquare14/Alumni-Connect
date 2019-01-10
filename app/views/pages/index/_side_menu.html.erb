@@ -41,6 +41,11 @@
             <i class="fa fa-users" aria-hidden="true"></i> Group Members
             <% end %>
         </li>
+        <li id ="team">
+            <%= link_to mailbox_inbox_path do %>
+            <i class="fa fa-inbox" aria-hidden="true"></i> Inbox
+            <% end %>
+        </li>
         <% if current_user.admin == true %>
         <li id="Admin Dashboard">
             <%= link_to rails_admin_path do%>
