@@ -22,18 +22,19 @@
   </div>
   <div class="row">
   <!-- [...] -->
+  <div class="row">
+ <!--[...]-->
   <div class="col-md-8">
     <div class="panel panel-default">
       <div class="panel-body">
         <% if is_conversation %>
             <%= render 'conversations/form' %>
         <% else %>
-        <!-- TODO -->
+            <%= render partial: 'conversations/conversation', collection: messages %>
         <% end %>
       </div>
     </div>
   </div>
-
 </div>
-
+</div>
 </div>
