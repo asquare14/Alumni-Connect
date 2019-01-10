@@ -16,7 +16,38 @@ class ExpertiseUsersController < ApplicationController
         end
     end
 
+    def available_mentors
+        arr = Array.new
+        @user_all = User.where(mentor: true)
+        @user_all.each do |user|
+            if user == current_user
+                next
+            end 
+            i = 0
+            user.expertises.each do |expertise|
+                if current_user.expertises.include?(expertise)
+                    i = i + 1
+                end
+            end
+            arr << i.to_s + " " + user.id.to_s
+        end
+        arr = arr.sort_by{ |s| s.scan(/\d+/).first.to_i }.reverse! 
+       
+        user_ids = Array.new
+        i = 0 
+        arr.each do |s|
+            break if i == 5
+            user_ids <<  s.scan(/\d+/).second.to_i
+            i = i + 1          
+        end
+        
+        @user = user_ids.collect {|i| User.find(i) } 
+        return @user
+    end
+
+
     def show_mentors
+        @user = available_mentors
     end
 
 end
