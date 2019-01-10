@@ -6,6 +6,10 @@ class ExpertiseUsersController < ApplicationController
 
     def create
         ExpertiseUsersManager.new(params[:user][:expertise_ids], current_user).run
-        redirect_to root_path
+        if current_user.mentee
+            redirect_to root_path
+        else
+            redirect_to hobby_posts_path
+        end
     end
 end
