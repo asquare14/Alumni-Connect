@@ -1,11 +1,23 @@
-.new-post {
-    height: calc(100vh - 50px);
-    background-color: white;
-    h1 {
-    text-align: center;
-    margin: 25px 0;
+.new-post-bg{
+    background-color: $backgroundColor;
+    height: auto;
+
+    .new-post {
+        height: auto;
+        width: 65%;
+        background-color: white;
+        margin-left: 25%;
+        //margin-bottom: 7%;
+
+        h1 {
+            text-align: center;
+            margin: 25px 0;
+        }
+        input, textarea, select {
+            width: 100%;
+        }
     }
-    input, textarea, select {
-    width: 100%;
-    }
+}
+.new-submit{
+    margin-bottom: 15%;
 }

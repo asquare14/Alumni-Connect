@@ -1,32 +1,31 @@
 <%= bootstrap_form_for(@post) do |f| %>
-  <%= f.text_field  :title, 
+<%= f.text_field  :title, 
                     maxlength: 100, 
                     placeholder: 'Title', 
                     class: 'form-control',
                     required: true, 
                     minlength: 5,
                     maxlength: 100 %>
-  <%= f.hidden_field :branch, :value => @branch %>
-  <%= f.text_area :content, 
+<%= f.hidden_field :branch, :value => @branch %>
+<%= f.text_area :content, 
                   rows: 6,
                   required: true, 
                   minlength: 20,
                   maxlength: 1000,
                   placeholder: 'Describe what you are looking for. E.g. specific interests, expertise level, etc.', 
                   class: 'form-control' %>
-  <% if @branch == 'hobby' %>
-    <%= f.text_field  :venue, 
+<% if @branch == 'hobby' %>
+<%= f.text_field  :venue, 
                       maxlength: 100, 
                       placeholder: 'Venue', 
                       class: 'form-control' %>
-  <% end %>
-  <%= f.url_field :rel_link, 
+<% end %>
+<%= f.url_field :rel_link, 
 	           placeholder: 'Relevant Link', 
 	           class: 'form-control' %>
-  <%= f.text_field :deadline,
+<%= f.text_field :deadline,
                     placeholder: 'date/month/year'  %>
-  <%= f.collection_select :category_id, Category.all, :id, :name, class: 'form-control' %>
-  <%= f.label :image %>
-  <%= f.file_field :image %>
-  <%= f.submit "Submit", class: 'form-control' %>
+<%= f.collection_select :category_id, Category.all, :id, :name, class: 'form-control' %>
+<%= f.file_field :image %>
+<%= f.submit "Submit", class: 'form-control new-submit' %>
 <% end %>
