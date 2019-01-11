@@ -1,6 +1,17 @@
 class RegistrationsController < Devise::RegistrationsController
 
-    
+    def create
+        super do
+            if resource.company.blank?
+                resource.mentee = 1
+                resource.mentor = 0
+            else
+                resource.mentor = 1
+                resource.mentee = 0
+            end
+            resource.save
+        end
+    end    
 
     def mentor
       @user = User.where(id: current_user.id)
