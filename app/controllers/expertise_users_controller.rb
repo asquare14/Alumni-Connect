@@ -4,7 +4,7 @@ class ExpertiseUsersController < ApplicationController
             if current_user.mentee
                 redirect_to action: 'show_selected_mentor'
             else
-                redirect_to root_path
+                redirect_to action: 'show_mentees'
             end
         end
         @expertise_users = ExpertiseUser.new()
@@ -16,7 +16,7 @@ class ExpertiseUsersController < ApplicationController
         if current_user.mentee
             redirect_to(:action => 'show_mentors')
         else
-            redirect_to hobby_posts_path
+            redirect_to action: 'show_mentees'
         end
     end
 
@@ -69,4 +69,12 @@ class ExpertiseUsersController < ApplicationController
         @mentor = User.where(id: current_user.as_mentees.first.mentor_id).first
     end
 
+    def show_mentees
+        arr = Array.new
+        @users = current_user.as_mentors
+        @users.each do |user|
+            arr << user.mentee_id
+        end
+        @mentees = User.where(id: arr)
+    end
 end

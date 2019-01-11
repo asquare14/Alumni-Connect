@@ -49,5 +49,6 @@ Rails.application.routes.draw do
 
   get 'expertise_users/show_mentors', to: 'expertise_users#show_mentors'
   post 'expertise_users/select_mentor', to: 'expertise_users#select_mentor'  
-  get 'expertise_users/show_selected_mentor', to: 'expertise_users#show_selected_mentor'  
+  get 'expertise_users/show_selected_mentor', to: 'expertise_users#show_selected_mentor'
+  get 'expertise_users/show_mentees', to: 'expertise_users#show_mentees' 
 end
