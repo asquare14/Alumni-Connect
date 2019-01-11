@@ -2,9 +2,9 @@ class ExpertiseUsersController < ApplicationController
     def new
         if ExpertiseUser.exists?(user_id: current_user.id)
             if current_user.mentee
-                redirect_to action: 'show_selected_mentor'
+                return redirect_to action: 'show_selected_mentor'
             else
-                redirect_to action: 'show_mentees'
+                return redirect_to action: 'show_mentees'
             end
         end
         @expertise_users = ExpertiseUser.new()
@@ -51,10 +51,16 @@ class ExpertiseUsersController < ApplicationController
 
 
     def show_mentors
+        if current_user.mentor
+            return redirect_to root_path
+        end
         @user = available_mentors
     end
 
     def select_mentor
+        if current_user.mentor
+            return redirect_to root_path
+        end
         @mentor_mentee = MentorMentee.new()
         @mentor_mentee.mentee_id = current_user.id
         @mentor_mentee.mentor_id = params[:user_id]
@@ -66,10 +72,16 @@ class ExpertiseUsersController < ApplicationController
     end
 
     def show_selected_mentor
+        if current_user.mentor
+            return redirect_to root_path
+        end
         @mentor = User.where(id: current_user.as_mentees.first.mentor_id).first
     end
 
     def show_mentees
+        if current_user.mentee
+            return redirect_to root_path
+        end
         arr = Array.new
         @users = current_user.as_mentors
         @users.each do |user|
