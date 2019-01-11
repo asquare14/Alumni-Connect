@@ -18,7 +18,7 @@ class ExpertiseUsersController < ApplicationController
 
     def available_mentors
         arr = Array.new
-        @user_all = User.where(mentor: true)
+        @user_all = User.where("mentor = true AND no_of_mentors < ?", 5)
         @user_all.each do |user|
             if user == current_user
                 next
