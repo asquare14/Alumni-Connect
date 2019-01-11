@@ -1,7 +1,11 @@
 class ExpertiseUsersController < ApplicationController
     def new
         if ExpertiseUser.exists?(user_id: current_user.id)
-            redirect_to root_path
+            if current_user.mentee
+                redirect_to action: 'show_selected_mentor'
+            else
+                redirect_to root_path
+            end
         end
         @expertise_users = ExpertiseUser.new()
         @user = User.where(id: current_user.id)
@@ -48,6 +52,21 @@ class ExpertiseUsersController < ApplicationController
 
     def show_mentors
         @user = available_mentors
+    end
+
+    def select_mentor
+        @mentor_mentee = MentorMentee.new()
+        @mentor_mentee.mentee_id = current_user.id
+        @mentor_mentee.mentor_id = params[:user_id]
+        @mentor_mentee.save
+        @mentor = User.where(id: params[:user_id]).first
+        @mentor.no_of_mentors = @mentor.no_of_mentors + 1
+        @mentor.save
+        redirect_to action: 'show_selected_mentor'
+    end
+
+    def show_selected_mentor
+        @mentor = User.where(id: current_user.as_mentees.first.mentor_id).first
     end
 
 end

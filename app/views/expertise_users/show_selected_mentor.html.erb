@@ -12,14 +12,12 @@
 <div class="grp-parent">
   <div class="grp-heading">
     <p>
-      Your College Group is <strong>
-        </strong>. Members in your group are :
+      Your Mentor is
     </p>
   </div>
   <div class="grp-main-content">
 
     <div class="grp-feed">
-      <% @user.each do |user| %>
       <div class="grp-feed-child">
         <div class="grp-child">
           <div>
@@ -27,29 +25,16 @@
           </div>
           <div class="grp-child-content">
             <p class="grp-child-name">
-              <a href=<%=user.linkedin%>>
-                <%= user.name %></a>
+              <a href=<%=@mentor.linkedin%>>
+                <%= @mentor.name %></a>
             </p>
             <p>
-              <%= user.company %>
+              <%= @mentor.company %>
             </p>
-<div>
-    <% user.expertises.each do |expertise| %>
-        <p>
-            <%= expertise.name %>
-        </p>
-    <% end %>
-</div>
-            <div>
-            <p>
-            <%= button_to 'Select', {:controller => "expertise_users", :action => "select_mentor", :user_id => user.id}, {:method=>:post} %>
-            </p>
-          </div>
 
           </div>
         </div>
       </div>
-      <% end %>
     </div>
   </div>
 
