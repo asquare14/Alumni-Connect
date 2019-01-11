@@ -166,8 +166,8 @@
   text-align: right;
   
   span {
-    font-size: 12px;
-    font-size: 1.2rem;
+    font-size: 13px;
+    font-size: 1.3rem;
   }
 }
 
@@ -175,7 +175,7 @@
   display: inline-block;
   background: #0077B5;
   color: white;
-  padding: 8px;
+  padding: 6px;
   border-radius: 10px;
   font-weight: bold;
   border: solid 2px #0077B5;
@@ -255,7 +255,7 @@
 /* study */
 #feed-job{
   background-color: $backgroundColor;
-  height: auto;
+  //height: auto;
 }
 
 #feed-child-job{

@@ -1,12 +1,19 @@
-#single-post-content {
+.post-parent{
+  background: $backgroundColor;
+  height: auto;
+  
+  #single-post-content {
     background: white;
     height: auto;
-  
+    margin-left: 25%;
+    margin-right: 15%;
+    
     h3 { 
       text-align: center;
     }
     p {
-      margin: 50px;
+      overflow-wrap: break-word;
+      
     }
     .posted-by {
       font-size: 12px;
@@ -14,4 +21,8 @@
       margin: 20px 0;
       color: rgba(0,0,0,0.5);
     }
+    .comment-btn{
+        margin-bottom: 10%;
+      }
   }
+}
