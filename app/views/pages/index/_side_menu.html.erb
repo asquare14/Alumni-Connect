@@ -41,6 +41,7 @@
             <i class="fa fa-users" aria-hidden="true"></i> Group Members
             <% end %>
         </li>
+           <li><%= link_to 'Your Conversations', conversations_path %>
         <% if current_user.admin == true %>
         <li id="Admin Dashboard">
             <%= link_to rails_admin_path do%>
