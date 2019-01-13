@@ -26,6 +26,9 @@ class ExpertiseUsersController < ApplicationController
         @user_all.each do |user|
             if user == current_user
                 next
+            end
+            if !ExpertiseUser.exists?(user_id: user.id)
+                next
             end 
             i = 0
             user.expertises.each do |expertise|
@@ -54,6 +57,11 @@ class ExpertiseUsersController < ApplicationController
         if current_user.mentor
             return redirect_to root_path
         end
+        
+        if !current_user.as_mentees.blank?
+            return redirect_to action: 'show_selected_mentor'
+        end
+
         @user = available_mentors
     end
 
@@ -75,6 +83,11 @@ class ExpertiseUsersController < ApplicationController
         if current_user.mentor
             return redirect_to root_path
         end
+     
+        if current_user.as_mentees.blank?
+            return redirect_to(:action => 'show_mentors')
+        end    
+    
         @mentor = User.where(id: current_user.as_mentees.first.mentor_id).first
     end
 
