@@ -1,17 +1,17 @@
-<div style="margin-left: 500px">
-<h2>Skills</h2>
-    <%= form_for @expertise_users do |f| %>
-      <% Expertise.all.each do |expertise| %>
-        <div class="field">
-          <%= check_box_tag expertise.id,
-              expertise.id, false,
-              :name => 'user[expertise_ids][]',
-              class: "form-control" %>
-           <%= label_tag expertise.id, expertise.name %>
-        </div>
-      <% end %>
-<div class="actions">
-      <%= f.submit "Submit" %>
-</div>
-    <% end %>
+<div class="new">
+<%= form_for @expertise_users, :html => {:class => 'form'} do |f| %>
+
+  <h2>Skills</h2>
+    <% Expertise.all.each do |expertise| %>
+  <div class="inputGroup">
+    <%= check_box_tag expertise.id,
+        expertise.id, false,
+        :name => 'user[expertise_ids][]' %>
+     <%= label_tag expertise.id, expertise.name %>
+  </div>
+<% end %>
+<%= f.submit "Submit" , class: "button" %>
+<% end %>
+
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 </div>
