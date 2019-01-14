@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 20190112162426) do
     t.integer "mentee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
   end
 
   create_table "posts", force: :cascade do |t|
@@ -178,4 +179,5 @@ ActiveRecord::Schema.define(version: 20190112162426) do
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
   add_foreign_key "expertise_users", "expertises"
   add_foreign_key "expertise_users", "users"
+
 end
