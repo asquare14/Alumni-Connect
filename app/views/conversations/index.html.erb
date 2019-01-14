@@ -1,25 +1,46 @@
-<div style="margin-left: 500px">
-<p><%= link_to 'Start conversation', new_message_path, class: 'btn btn-lg btn-primary' %></p>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-<div class="row">
-  <div class="col-sm-3">
-    <ul class="nav nav-pills nav-stacked">
-      <%= mailbox_section 'inbox', @box %>
-      <%= mailbox_section 'sent', @box %>
-      <%= mailbox_section 'trash', @box %>
-    </ul>
-  </div>
-
-  <div class="col-sm-9">
-    <% if @box == 'trash' %>
-      <p><%= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-danger', method: :delete,
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 col-md-2">
+            <div class="btn-group">
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-3 col-md-2">
+        </div>
+        <div class="col-sm-9 col-md-10">
+            <!-- Nav tabs -->
+           <ul class="nav nav-pills">
+              <li class="active">
+              <%= mailbox_section 'inbox', @box %></li>
+              <li><%= mailbox_section 'sent', @box %></li>
+              <li> <%= mailbox_section 'trash', @box %></li>
+              <div class="pull-right">
+                  <li><%= link_to 'Compose', new_message_path, class: 'btn btn-success btn-md' %></li>
+              </div>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane fade in active">
+                    <div class="list-group">
+                    
+                  <ul class="list-group">
+                    <%= render partial: 'conversations/conversation', collection: @conversations %>
+                  </ul>
+                  <%= will_paginate %>               
+            </div>
+            <!-- Ad -->
+             <div class="row-md-12">
+                 <% if @box == 'trash' %>
+                    <p><%= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-danger btn-md', method: :delete,
                      data: {confirm: 'Are you sure?'} %></p>
-    <% end %>
-    <ul class="list-group">
-      <%= render partial: 'conversations/conversation', collection: @conversations %>
-    </ul>
-
-    <%= will_paginate %>
-  </div>
-</div>
+              <% end %>
+        </div> 
+    </div>
 </div>
