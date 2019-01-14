@@ -1,0 +1,44 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head> -->
+
+<div class="grp-parent">
+  <div class="grp-heading">
+    <p>
+      Your College Group is <strong>
+        </strong>. Members in your group are :
+    </p>
+  </div>
+  <div class="grp-main-content">
+
+    <div class="grp-feed">
+      <% @mentees.each do |user| %>
+      <div class="grp-feed-child">
+        <div class="grp-child">
+          <div>
+            <%= image_tag ("profilepic.jpg"), class: "profile-pic-img" %>
+          </div>
+          <div class="grp-child-content">
+            <p class="grp-child-name">
+              <a href=<%=user.linkedin%>>
+                <%= user.name %></a>
+            </p>
+            <p>
+              <%= user.company %>
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
