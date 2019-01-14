@@ -4,9 +4,19 @@ Rails.application.routes.draw do
   
   devise_for :users, :controllers => {:registrations => "registrations"}
   
+  resources :expertises 
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
     get 'signup', to: 'devise/registrations#new'
+    get 'mentor', to: 'devise/registrations#mentor'
+    get 'mentee', to: 'devise/registrations#mentee'
+  end
+
+  resource :registrations do
+    devise_scope :user do
+      get 'mentor'
+      get 'mentee'
+    end
   end
 
   resources :posts do
@@ -49,5 +59,10 @@ Rails.application.routes.draw do
   end
 
   root 'pages#index'
+  resources :expertise_users, only: [:new, :create]
 
+  get 'expertise_users/show_mentors', to: 'expertise_users#show_mentors'
+  post 'expertise_users/select_mentor', to: 'expertise_users#select_mentor'  
+  get 'expertise_users/show_selected_mentor', to: 'expertise_users#show_selected_mentor'
+  get 'expertise_users/show_mentees', to: 'expertise_users#show_mentees' 
 end

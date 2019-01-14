@@ -29,6 +29,21 @@ ActiveRecord::Schema.define(version: 20190112162426) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
+  create_table "expertise_users", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "expertise_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["expertise_id"], name: "index_expertise_users_on_expertise_id"
+    t.index ["user_id"], name: "index_expertise_users_on_user_id"
+  end
+
+  create_table "expertises", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -87,6 +102,13 @@ ActiveRecord::Schema.define(version: 20190112162426) do
     t.string "message_id"
     t.index ["notification_id"], name: "index_mailboxer_receipts_on_notification_id"
     t.index ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
+
+  create_table "mentor_mentees", force: :cascade do |t|
+    t.integer "mentor_id"
+    t.integer "mentee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+
   end
 
   create_table "posts", force: :cascade do |t|
@@ -130,6 +152,9 @@ ActiveRecord::Schema.define(version: 20190112162426) do
     t.datetime "updated_at", null: false
     t.boolean "admin"
     t.string "dp"
+    t.boolean "mentor"
+    t.boolean "mentee"
+    t.integer "no_of_mentors", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -152,4 +177,7 @@ ActiveRecord::Schema.define(version: 20190112162426) do
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
+  add_foreign_key "expertise_users", "expertises"
+  add_foreign_key "expertise_users", "users"
+
 end

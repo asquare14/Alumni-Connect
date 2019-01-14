@@ -46,6 +46,19 @@
            <i class="fa fa-inbox" aria-hidden="true"></i> Your Messages
            <% end %>
         </li>
+        
+        <li id="team">
+            <%= link_to new_expertise_user_path do %>
+            <i class="fa fa-users" aria-hidden="true"></i> Mentor Someone
+            <% end %>
+        </li>
+
+        <li id="team">
+            <%= link_to new_expertise_user_path do %>
+            <i class="fa fa-users" aria-hidden="true"></i> Get Mentorship
+            <% end %>
+        </li>
+
         <% if current_user.admin == true %>
         <li id="Admin Dashboard">
             <%= link_to rails_admin_path do%>

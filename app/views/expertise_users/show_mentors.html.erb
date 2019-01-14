@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class='show_mentors'>
+  <h2 style="text-align:center">Choose Your Mentor:</h2>
+<main class="grid">
+  <% @user.each do |user| %>
+  <article>
+    <div class="card">
+    <%= image_tag ("profilepic.jpg"), class: "profile-pic-img" %>
+    <h1><a href=<%=user.linkedin%>>
+      <%= user.name %></a></h1>
+    <p class="title"> <%= user.company %> </p>
+    <% user.expertises.each do |expertise| %>
+        <p class="expertises">
+            <%= expertise.name %>
+        </p>
+    <% end %>
+
+    <%= button_to 'Select', {:controller => "expertise_users", :action => "select_mentor", :user_id => user.id} , {form_class: '', class: "button_to"} %>
+  </div>
+  </article>
+<% end %>
+</main>
+</div>

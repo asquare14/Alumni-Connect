@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Timmana');
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans:700i');
+
+.show_mentors{
+
+  margin-top: 3%;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  grid-gap: 20px;
+  align-items: center;
+  position: absolute;
+  left: 24%;
+  padding-bottom: 20px;
+  }
+.grid > article {
+  //border: 1px solid #ccc;
+  //box-shadow: 2px 2px 6px 10px  rgba(0,0,0,0.3);
+  //
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  //
+}
+.grid > article img {
+  max-width: 100%;
+}
+.text {
+  padding: 0 20px 20px;
+}
+
+/*
+.text > button {
+  background: gray;
+  border: 0;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  }
+  */
+  .card {
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    background-color: white;
+    //
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    //
+  }
+  .title {
+    /*
+    color: grey;
+    font-size: 18px;
+    */
+    color: #7C8097;
+    font-size: 1.1em;
+    margin-top: -15px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  //
+  .expertises {
+    font-family: 'Merriweather Sans', sans-serif;
+    margin: 0 0 1px;
+    font-size: 21px;
+    color: #0077b5;
+  }
+  //
+
+  button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    /*
+    background-color: #000;
+    */
+    background-color: #0077b5; /*new*/
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 15px; /*new*/
+    border-radius: 0px 0px 10px 10px; /*new*/
+  }
+
+  .button_to {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    //background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    //
+    background-color: #0077b5;
+    margin-top: 15px;
+    border-radius: 0px 0px 10px 10px;
+    //
+  }
+
+  a {
+    text-decoration: none;
+    //font-size: 22px;
+    color: #0077B5;
+    //
+    font-size: 30px;
+    font-family: 'Timmana', sans-serif;
+    //
+  }
+
+  .profile-pic-img{
+    //height: 150px;
+    //width: 150px;
+    //
+    height: 130px;
+    width: 130px;
+    //
+    border-radius: 50%;
+    margin-top: 10px;
+    //box-shadow: 0 13px 26px rgba(0, 119, 181, 0.76), 0 3px 6px rgba(0, 119, 181, 0.76);
+    //
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2), 0 1px 6px rgba(0, 0, 0, 0.2);
+    //margin-bottom: 20px;
+    //
+  }
+
+
+  button:hover, a:hover, .button_to:hover {
+    opacity: 0.7;
+  }
+
+  /*new */
+  //
+  h2{
+   color: #0077b5;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 32px;
+   margin-bottom: 20px;
+   margin-left: 15%;
+ }
+  //
+}

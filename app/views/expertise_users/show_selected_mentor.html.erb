@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class='show_selected_mentor'>
+<h2 style="text-align:center">Your Mentor:</h2>
+
+<div class="card">
+  <%= image_tag ("profilepic.jpg"), class: "profile-pic-img" %>
+  <h1> <a href=<%=@mentor.linkedin%>>
+                  <%= @mentor.name %></a></h1>
+  <p class="title"> <%= @mentor.company %> </p>
+  <% @mentor.expertises.each do |expertise| %>
+      <p class="expertises">
+          <%= expertise.name %>
+      </p>
+  <% end %>
+  <p><button>Contact</button></p>
+</div>
+
+</div>
+
+</div>

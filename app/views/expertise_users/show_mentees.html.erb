@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class='show_mentees'>
+  <h2 style="text-align:center"> Your Mentees:</h2>
+<main class="grid">
+  <% @mentees.each do |user| %>
+  <article>
+    <div class="card">
+    <%= image_tag ("profilepic.jpg"), class: "profile-pic-img" %>
+    <h1><a href=<%=user.linkedin%>>
+      <%= user.name %></a></h1>
+    <p class="title"> <%= user.institute %> </p>
+    <% user.expertises.each do |expertise| %>
+        <p class="expertises">
+            <%= expertise.name %>
+        </p>
+    <% end %>
+
+      <button>Contact</button>
+  </div>
+  </article>
+<% end %>
+</main>
+</div>
