@@ -23,6 +23,30 @@
                 linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/', 
                 password: '123456', 
                 password_confirmation: '123456' )
+    User.create(name: 'testIIITB', 
+                email: 'test4@test.com', 
+                institute: 'IIITB',
+                graduation: '2021',
+                branch: 'ECE',
+                linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/', 
+                password: '123456', 
+                password_confirmation: '123456' )
+    User.create(name: 'testIITR', 
+                email: 'test5@test.com', 
+                institute: 'IITR',
+                graduation: '2021',
+                branch: 'ECE',
+                linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/', 
+                password: '123456', 
+                password_confirmation: '123456' )
+    User.create(name: 'testIIITH', 
+                email: 'test6@test.com', 
+                institute: 'IIITH',
+                graduation: '2021',
+                branch: 'ECE',
+                linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/', 
+                password: '123456', 
+                password_confirmation: '123456' )
   end
   
   
@@ -52,7 +76,7 @@
         Post.create(
           title: Faker::Lorem.sentences[0], 
           content: Faker::Lorem.sentences[0], 
-          user_id: rand(1..3), 
+          user_id: rand(1..6), 
           category_id: category.id
         )
       end
