@@ -3,11 +3,12 @@
   background-color: #0077B5;
   border: none;
   color: white;
-  padding: 15px 25px;
+  padding: 5px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
+  margin: 10px 0px;
 }
 
 .inputGroup {
@@ -17,7 +18,7 @@
     position: relative;
 
     label {
-      padding: 12px 30px;
+      padding: 5px 30px;
       width: 100%;
       display: block;
       text-align: left;
@@ -27,6 +28,8 @@
       z-index: 2;
       transition: color 200ms ease-in;
       overflow: hidden;
+      box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
 
       &:before {
         width: 10px;
@@ -94,12 +97,17 @@
 
 // codepen formatting
 .form {
-  padding: 0 16px;
-  max-width: 550px;
-  margin: 50px auto;
+  padding: 16px 16px;
+  max-width: 40%;
+  margin: 75px auto;
   font-size: 18px;
   font-weight: 600;
   line-height: 36px;
+  background-color: #E2EAF5;
+  position: relative;
+  left: 8%;
+  box-shadow: 50px 100px 200px rgba(0, 119, 181, 0.76);
+  border-radius: 20px;
 }
 
 body {
