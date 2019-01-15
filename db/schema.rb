@@ -102,13 +102,13 @@ ActiveRecord::Schema.define(version: 20190112162426) do
     t.string "message_id"
     t.index ["notification_id"], name: "index_mailboxer_receipts_on_notification_id"
     t.index ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
+  end
 
   create_table "mentor_mentees", force: :cascade do |t|
     t.integer "mentor_id"
     t.integer "mentee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
   end
 
   create_table "posts", force: :cascade do |t|
@@ -174,10 +174,9 @@ ActiveRecord::Schema.define(version: 20190112162426) do
   end
 
   add_foreign_key "comments", "posts"
+  add_foreign_key "expertise_users", "expertises"
+  add_foreign_key "expertise_users", "users"
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
-  add_foreign_key "expertise_users", "expertises"
-  add_foreign_key "expertise_users", "users"
-
 end
