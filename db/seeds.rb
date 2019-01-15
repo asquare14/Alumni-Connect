@@ -200,9 +200,20 @@
     Group.create(name: "IIITH")
   end
 
+  def seed_expertises
+    Expertise.create(name: "Ruby")
+    Expertise.create(name: "C++")
+    Expertise.create(name: "Python")
+    Expertise.create(name: "Java")
+    Expertise.create(name: "C")
+    Expertise.create(name: "C#")
+    Expertise.create(name: "JavaScript")
+    Expertise.create(name: "R")
+  end
+
   
   seed_users
   seed_categories
   seed_posts
   seed_groups
-  
+  seed_expertises
