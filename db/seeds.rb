@@ -4,7 +4,9 @@
                 institute: 'IIITB',
                 graduation: '2021',
                 branch: 'ECE',
-                linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/', 
+                linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: false,
+                mentee: true, 
                 password: '123456', 
                 password_confirmation: '123456' )
     User.create(name: 'test2', 
@@ -12,7 +14,9 @@
                 institute: 'IITR',
                 graduation: '2021',
                 branch: 'CS',
-                linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/', 
+                linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: false,
+                mentee: true, 
                 password: '123456', 
                 password_confirmation: '123456' )
     User.create(name: 'test3', 
@@ -20,7 +24,9 @@
                 institute: 'IIITH',
                 graduation: '2021',
                 branch: 'ECE',
-                linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/', 
+                linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: false,
+                mentee: true, 
                 password: '123456', 
                 password_confirmation: '123456' )
     User.create(name: 'testIIITB', 
@@ -28,7 +34,9 @@
                 institute: 'IIITB',
                 graduation: '2021',
                 branch: 'ECE',
-                linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/', 
+                linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: false,
+                mentee: true,
                 password: '123456', 
                 password_confirmation: '123456' )
     User.create(name: 'testIITR', 
@@ -36,7 +44,9 @@
                 institute: 'IITR',
                 graduation: '2021',
                 branch: 'ECE',
-                linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/', 
+                linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: false,
+                mentee: true,
                 password: '123456', 
                 password_confirmation: '123456' )
     User.create(name: 'testIIITH', 
@@ -44,7 +54,9 @@
                 institute: 'IIITH',
                 graduation: '2021',
                 branch: 'ECE',
-                linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/', 
+                linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: false,
+                mentee: true, 
                 password: '123456', 
                 password_confirmation: '123456' )
     User.create(name: "Neil Armstrong",
@@ -54,6 +66,8 @@
                 graduation: '2021',
                 branch: 'ECE',
                 linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: true,
+                mentee: false,
                 password: '123456',
                 password_confirmation: '123456' )
     User.create(name: "Krista Stone",
@@ -63,6 +77,8 @@
                 graduation: '2019',
                 branch: 'CSE',
                 linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: true,
+                mentee: false,
                 password: '123456',
                 password_confirmation: '123456' )
     User.create(name: "Petrux Rux",
@@ -71,6 +87,8 @@
                 graduation: '2021',
                 branch: 'ECE',
                 linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: false,
+                mentee: true,
                 password: '123456',
                 password_confirmation: '123456' )
     User.create(name: "Keith Pickering",
@@ -79,6 +97,8 @@
                 graduation: '2021',
                 branch: 'ECE',
                 linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: false,
+                mentee: true,
                 password: '123456',
                 password_confirmation: '123456' )
     User.create(name: 'Harry Potter',
@@ -88,6 +108,8 @@
                 graduation: '2020',
                 branch: 'ECE',
                 linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: true,
+                mentee: false,
                 password: '123456',
                 password_confirmation: '123456' )
     User.create(name: 'Shinchan Royal',
@@ -96,6 +118,8 @@
                 graduation: '2020',
                 branch: 'CSE',
                 linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: false,
+                mentee: true,
                 password: '123456',
                 password_confirmation: '123456' )
     User.create(name: 'Harvest Vase',
@@ -104,6 +128,8 @@
                 graduation: '2022',
                 branch: 'CSE',
                 linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: false,
+                mentee: true,
                 password: '123456',
                 password_confirmation: '123456' )
     User.create(name: 'Christy Cheoi',
@@ -113,14 +139,19 @@
                 graduation: '2020',
                 branch: 'Mechanical',
                 linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: true,
+                mentee: false,
                 password: '123456',
                 password_confirmation: '123456' )
     User.create(name: 'Makarshi Sank',
                 email: 'test15@test.com',
                 institute: 'IIITH',
+                company: "Linkedin",
                 graduation: '2021',
                 branch: 'ECE',
                 linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: true,
+                mentee: false,
                 password: '123456',
                 password_confirmation: '123456' )
     User.create(name: 'Biru Puturan',
@@ -130,6 +161,8 @@
                 company: "Microsoft",
                 branch: 'Civil',
                 linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: true,
+                mentee: false,
                 password: '123456',
                 password_confirmation: '123456' )
     User.create(name: 'Chang Ghoose',
@@ -139,6 +172,8 @@
                 graduation: '2020',
                 branch: 'Civil',
                 linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: true,
+                mentee: false,
                 password: '123456',
                 password_confirmation: '123456' )
     User.create(name: 'Johny Advert',
@@ -148,14 +183,19 @@
                 graduation: '2021',
                 branch: 'Electrical',
                 linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: true,
+                mentee: false,
                 password: '123456',
                 password_confirmation: '123456' )
     User.create(name: 'Christopher Walken',
                 email: 'test19@test.com',
                 institute: 'IIITH',
+                company: "Linkedin",
                 graduation: '2022',
                 branch: 'ECE',
                 linkedin: 'https://www.linkedin.com/in/atibhi-agrawal-267525149/',
+                mentor: true,
+                mentee: false,
                 password: '123456',
                 password_confirmation: '123456' )
   end
