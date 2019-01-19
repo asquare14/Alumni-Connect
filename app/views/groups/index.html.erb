@@ -17,7 +17,6 @@
     </p>
   </div>
   <div class="grp-main-content">
-
     <div class="grp-feed">
       <% @group.users.each do |user| %>
       <div class="grp-feed-child">
@@ -40,9 +39,9 @@
                   <%=  user.graduation %></i>
               </p>
               <p>
-              <% unless current_user == user %>
-              <%= link_to 'Send message', new_message_path(to: user.id), class: 'btn btn-default btn-sm' %>
-              <% end %>
+                <% unless current_user == user %>
+                <%= link_to 'Send message', new_message_path(to: user.id), class: 'btn btn-default btn-sm' %>
+                <% end %>
               </p>
             </div>
 
