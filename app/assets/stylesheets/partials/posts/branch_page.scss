@@ -19,7 +19,7 @@
     }
     .branch-posts-bar{
       margin-top: 1%;
-      margin-left: 1.5%;
+      margin-left: 3%;
       margin-right: 20%;
     }
     #feed {
@@ -27,15 +27,15 @@
       display: grid;
       grid-template-columns: repeat(2, 49%);
       grid-auto-flow: row;
-      row-gap: 2%;
-      column-gap: 2%;
+      row-gap: 3%;
+      column-gap: 3%;
 
       #feed-child{
         position: relative;
         border: 1px solid $backgroundColor;
         padding: 2%;
         background-color: white;
-        box-shadow: 0 8px 20px -10px rgb(160, 145, 145);
+        box-shadow: 0 8px 20px -4px rgb(160, 145, 145);
         padding-bottom: 40px;
 
         .feed-child-head{
@@ -260,6 +260,6 @@
 
 #feed-child-job{
   background-color: white;
-  box-shadow: 0 8px 20px -10px rgb(160, 145, 145);
+  box-shadow: 0 8px 20px -7px rgb(160, 145, 145);
 
 }
