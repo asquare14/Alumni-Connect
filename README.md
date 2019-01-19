@@ -9,6 +9,9 @@
 
 `npm install`
 
+`export GOOGLE_APPLICATION_CREDENTIALS="/home/atibhi/Desktop/Wintathon2019/wintathon-b86a26e78085.json"
+`
+
 `bin/webpack-dev-server`
 
 To run server

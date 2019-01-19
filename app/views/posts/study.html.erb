@@ -5,7 +5,9 @@
         <%= render 'posts/branch/search_form',
                             branch: 'study',
                             search_placeholder: 'Eg. Jobs, Internships...' %>
+        <% if !current_user.company.blank? %>
         <%= render 'posts/branch/create_new_post', branch: 'study' %>
+        <% end %>
 
     </div>
 

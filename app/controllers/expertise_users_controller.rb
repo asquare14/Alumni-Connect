@@ -4,7 +4,7 @@ class ExpertiseUsersController < ApplicationController
     def new
         if ExpertiseUser.exists?(user_id: current_user.id)
             if current_user.mentee
-                return redirect_to action: 'show_selected_mentor'
+                return redirect_to new_message_path
             else
                 return redirect_to action: 'show_mentees'
             end
@@ -103,7 +103,7 @@ class ExpertiseUsersController < ApplicationController
         end
         
         if !current_user.as_mentees.blank?
-            return redirect_to action: 'show_selected_mentor'
+            return redirect_to new_message_path
         end
 
         @user = available_mentors
@@ -120,7 +120,7 @@ class ExpertiseUsersController < ApplicationController
         @mentor = User.where(id: params[:user_id]).first
         @mentor.no_of_mentors = @mentor.no_of_mentors + 1
         @mentor.save
-        redirect_to action: 'show_selected_mentor'
+        redirect_to new_message_path
     end
 
     def show_selected_mentor
