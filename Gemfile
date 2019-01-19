@@ -44,6 +44,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'rails_admin', '~> 1.3'
 gem 'mini_magick'
 gem 'mailboxer'
+gem 'google-cloud-language'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
