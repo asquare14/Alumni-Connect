@@ -2,6 +2,7 @@
 <%= form_for @expertise_users, :html => {:class => 'form'} do |f| %>
 
   <h2>Skills</h2>
+    <textarea id="message" name="message" cols="34" rows="3"> </textarea>
     <% Expertise.all.each do |expertise| %>
   <div class="inputGroup">
     <%= check_box_tag expertise.id,
