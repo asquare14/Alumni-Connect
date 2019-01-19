@@ -19,7 +19,7 @@ class Index extends Component {
                                     <div className="main-child-nav"></div>
                                     <div className="main-child-content">
                                         <h1>LinkedIn Campus Chapter</h1>
-                                        <p>Locdefdfdfdddfdffjfnewjfhjfnhjdfnhjdnfjhdnjd cnd fhhfndhfdejfnrrjehfnerhjfnbrh</p>
+                                        <p>A website that bridges the gap between Campus to Corporate. Join this to stay connected with your campus, share events, jobs and get mentorship !</p>
                                     </div>
                                     <img className="main-child-pic" src={MainPic} alt="Not uploaded" />
                                     <div className="main-child-div"><a href="/login"><button className="main-child-btn">Login</button></a></div>

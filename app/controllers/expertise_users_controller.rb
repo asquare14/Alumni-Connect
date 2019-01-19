@@ -1,4 +1,6 @@
 class ExpertiseUsersController < ApplicationController
+    require "google/cloud/language"
+
     def new
         if ExpertiseUser.exists?(user_id: current_user.id)
             if current_user.mentee
@@ -10,12 +12,54 @@ class ExpertiseUsersController < ApplicationController
         @expertise_users = ExpertiseUser.new()
         @user = User.where(id: current_user.id)
     end
+    
+    def send_description(text_content)
+        # text_content = "Text to classify"
 
+        cat_arr = []
+
+        puts("---------------------------------------------------------")
+        language = Google::Cloud::Language.new
+        response = language.classify_text content: text_content, type: :PLAIN_TEXT
+        
+        categories = response.categories
+        
+        categories.each do |category|
+            cat_arr << category.name
+            # puts "Name: #{category.name} Confidence: #{category.confidence}"
+        end
+        return cat_arr
+    end
     def create
-        ExpertiseUsersManager.new(params[:user][:expertise_ids], current_user).run
+        #ExpertiseUsersManager.new(params[:user][:expertise_ids], current_user).run
+        cat_arr = send_description(params[:message])
+
+        puts(cat_arr)
+	ids = []	
+
+	cat_arr.each do |cat|
+		if Expertise.exists?(name: cat)
+		    @temp = Expertise.where(name: cat).first
+		    ids << @temp.id
+		    next
+		end
+		@expertise = Expertise.new()
+		@expertise.name = cat
+		@expertise.flag = 1
+		@expertise.save
+		puts @expertise.id
+		ids << @expertise.id
+		puts cat
+	end
+
+	ids = ids + params[:user][:expertise_ids]
+	ExpertiseUsersManager.new(ids, current_user).run
+
+        #Expertise.where(:name=>s_arr).first_or_create
+
         if current_user.mentee
             redirect_to(:action => 'show_mentors')
-        else
+        else    
             redirect_to action: 'show_mentees'
         end
     end
