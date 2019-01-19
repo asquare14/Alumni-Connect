@@ -4,49 +4,55 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container" style="margin-top: 100px">
-	<div style="margin-left: 200px">
-  <div class="row">
-		<div class="panel panel-default">
+  <div style="margin-left: 200px">
+    <div class="row">
+      <div class="panel panel-default">
         <div class="panel-heading clearfix">
           <h3 class="panel-title">Message your Group Member</h3>
         </div>
         <div class="panel-body">
-	<%= form_tag messages_path, method: :post do %>
-            <form role="form" class="form-horizontal">
-                <div class="form-group">
-                  <div class="col-sm-2">
-                      <%= label_tag 'recipients', 'To' %>
+          <%= form_tag messages_path, method: :post do %>
+          <form role="form" class="form-horizontal">
+            <div class="form-group">
+              <div class="col-sm-2">
+                <%= label_tag 'recipients', 'To' %>
+              </div>
+              <div class="col-sm-10">
+                <%= select_tag 'recipients', recipients_options(@chosen_recipient), multiple: true, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-2">
+                <%= label_tag 'message[subject]', 'Subject' %>
+              </div>
+              <div class="col-sm-10">
+                <%= text_field_tag 'message[subject]', nil,placeholder: 'Subject', class: 'form-control', required: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-2">
+                <%= label_tag 'message[body]', 'Message' %>
+              </div>
+              <div class="col-sm-12">
+                <%= text_area_tag 'message[body]', nil,placeholder: 'Type your message here', cols: 3, class: 'form-control', required: true %>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-12 ">
+                  <div class="msg-btn-div">
+                    <%= submit_tag 'Send', class: 'btn btn-primary' %>
                   </div>
-                  <div class="col-sm-10">
-                      <%= select_tag 'recipients', recipients_options(@chosen_recipient), multiple: true, class: 'form-control' %>
-                  </div>
                 </div>
-                <div class="form-group">
-                <div class="col-sm-2"><%= label_tag 'message[subject]', 'Subject' %></div>
-                  <div class="col-sm-10"><%= text_field_tag 'message[subject]', nil,placeholder: 'Subject', class: 'form-control', required: true %></div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-2">
-                    <%= label_tag 'message[body]', 'Message' %>
-                  </div>
-                  <div class="col-sm-12">        
-                    <%= text_area_tag 'message[body]', nil,placeholder: 'Type your message here', cols: 3, class: 'form-control', required: true %>
-                </div>
-                <div class="form-group">
-                <div class ="col-sm-12" >
-                  <%= submit_tag 'Send', class: 'btn btn-primary btn-block' %>
-                </div>
-                </div>
-            </form>
-	<% end %>
+              </div>
+          </form>
+          <% end %>
         </div>
       </div>
-</div>
-</div>
-</div>
- <div style="margin-left: 200px" align="center">
-           <%= link_to conversations_path do %>
-            Go Back To Your Messages
-           <% end %>
+    </div>
   </div>
+</div>
+<div style="margin-left: 200px" align="center">
+  <%= link_to conversations_path do %>
+  Go Back To Your Messages
+  <% end %>
+</div>
 </div>
