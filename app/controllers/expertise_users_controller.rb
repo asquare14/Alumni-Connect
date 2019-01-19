@@ -52,7 +52,7 @@ class ExpertiseUsersController < ApplicationController
 		puts cat
 	end
 
-	ids = ids + params[:user][:expertise_ids]
+	#ids = ids + params[:user][:expertise_ids]
 	ExpertiseUsersManager.new(ids, current_user).run
 
         #Expertise.where(:name=>s_arr).first_or_create
