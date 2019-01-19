@@ -1,16 +1,12 @@
 <div class="new">
 <%= form_for @expertise_users, :html => {:class => 'form'} do |f| %>
 
-  <h2>Skills</h2>
-    <textarea id="message" name="message" cols="34" rows="3"> </textarea>
-    <% Expertise.all.each do |expertise| %>
-  <div class="inputGroup">
-    <%= check_box_tag expertise.id,
-        expertise.id, false,
-        :name => 'user[expertise_ids][]' %>
-     <%= label_tag expertise.id, expertise.name %>
-  </div>
+<% if !current_user.company.blank? %>
+    <h3>Please write what you would like to mentor on !</h3>
+<% else %>
+    <h3>What are you looking for in a mentor ?</h3>
 <% end %>
+<textarea id="message" name="message" cols="55" rows="5"> </textarea>
 <%= f.submit "Submit" , class: "button" %>
 <% end %>
 
