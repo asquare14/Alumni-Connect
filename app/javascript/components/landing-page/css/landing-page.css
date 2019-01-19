@@ -21,9 +21,9 @@
 }
 .main-child-div{
     background-color: #0077B5;
-    top:60%;
-    height: 8vh;
-    width: 30vw;
+    top:57%;
+    height: 10vh;
+    width: 25vw;
     position: absolute;
     border-top-right-radius: 110px;
     border-bottom-right-radius: 110px;
@@ -31,9 +31,9 @@
 
 .main-child1-div{
     background-color: #0077B5;
-    top:75%;
-    height: 8vh;
-    width: 30vw;
+    top:72%;
+    height: 10vh;
+    width: 25vw;
     position: absolute;
     border-top-right-radius: 110px;
     border-bottom-right-radius: 110px;
@@ -42,7 +42,7 @@
 .main-child-pic{
     position: absolute;
     top: 27%;
-    left: 50%;
+    left: 55%;
 }
 .main-child-content{
     position: absolute;
@@ -54,23 +54,27 @@
     
 }
 .main-child-content h1{
-    margin-left: 23% ;
+    /* margin-left: auto ;
+    margin-right: auto;
+    width: 50%; */
     font-weight: bold;
-    color: rgb(206, 13, 45);
+    color: #0077B5;
+    font-size: 3.2em;
 
 }
 .main-child-content p{
     font-size: 18px;
-    color: rgb(173, 100, 32);
+    color: rgb(82, 77, 80);
 }
 .main-child-btn{
     position: relative;
-    background-color: rgb(199, 135, 161);
+    background-color: #0077B5;
     border: none;
-    margin-left: 70%;
-    margin-top: 2.5%;
+    border-radius: 8px;
+    margin-left: 65%;
+    margin-top: 4%;
     color: #FFFFFF;
-    font-size: 20px;
+    font-size: 25px;
     width: 100px;
     text-align: center;
     -webkit-transition-duration: 0.4s; /* Safari */
