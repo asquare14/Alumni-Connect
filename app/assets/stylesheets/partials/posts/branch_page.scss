@@ -18,25 +18,27 @@
 
     }
     .branch-posts-bar{
-      margin-top: 1%;
+      //margin-top: 1%;
       margin-left: 3%;
       margin-right: 20%;
     }
     #feed {
       background-color: $backgroundColor;
       display: grid;
-      grid-template-columns: repeat(2, 49%);
-      grid-auto-flow: row;
-      row-gap: 3%;
-      column-gap: 3%;
+      grid-template-columns: repeat(3, 32%);
+      grid-template-rows: repeat(10, 50%);
+      //grid-auto-flow: row;
+      row-gap: 2%;
+      column-gap: 2%;
 
       #feed-child{
         position: relative;
         border: 1px solid $backgroundColor;
-        padding: 2%;
+        border-radius: 10px;
+        padding: 1.5%;
         background-color: white;
         box-shadow: 0 8px 20px -4px rgb(160, 145, 145);
-        padding-bottom: 40px;
+        padding-bottom: 130px;
 
         .feed-child-head{
           display: flex;
@@ -48,7 +50,7 @@
         .feed-child-title{
           font-weight: bold;
           text-align: center;
-          font-size: 22px;
+          font-size: 18px;
         }
         .feed-child-venue{
           font-weight: bold;
@@ -60,6 +62,7 @@
 
         p{
           overflow-wrap: break-word;
+          //line-height: 1;
         }
         .feed-child-bottom{
           position: absolute;
@@ -234,6 +237,11 @@
 .image-uploaded{
   width: 400px;
   height: 250px;
+}
+
+.image-uploaded-main{
+  width: 40px;
+  //height: 200px;
 }
 .image-center{
   width: 100%;

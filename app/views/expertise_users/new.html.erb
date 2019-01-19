@@ -1,18 +1,18 @@
 <div class="new">
-<%= form_for @expertise_users, :html => {:class => 'form'} do |f| %>
+  <%= form_for @expertise_users, :html => {:class => 'form'} do |f| %>
 
   <h2>Skills</h2>
-    <textarea id="message" name="message" cols="34" rows="3"> </textarea>
-    <% Expertise.all.each do |expertise| %>
+  <textarea id="message" name="message" cols="34" rows="3"> </textarea>
+  <% Expertise.all.each do |expertise| %>
   <div class="inputGroup">
     <%= check_box_tag expertise.id,
         expertise.id, false,
         :name => 'user[expertise_ids][]' %>
-     <%= label_tag expertise.id, expertise.name %>
+    <%= label_tag expertise.id, expertise.name %>
   </div>
-<% end %>
-<%= f.submit "Submit" , class: "button" %>
-<% end %>
+  <% end %>
+  <%= f.submit "Submit" , class: "button" %>
+  <% end %>
 
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 </div>

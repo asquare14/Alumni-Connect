@@ -7,7 +7,7 @@
         <%= render 'posts/branch/create_new_post', branch: branch %>
 
     </div>
- <div class="branch-posts-bar">
+    <div class="branch-posts-bar">
         <!-- <h1 class="page-title">
             <%= page_title %>
         </h1> -->
@@ -21,8 +21,9 @@
             <div id="feed-child">
                 <p class="feed-child-head">
                     <span class="feed-child-name">
-                    <p class="lead"><a href=<%=post.user.linkedin%>><span class="badge badge-info">Posted by <%= post.user.name %></span></a>
-                        </span>
+                        <p class="lead"><a href=<%=post.user.linkedin%>><span class="badge badge-info">Posted by
+                                    <%= post.user.name %></span></a>
+                    </span>
                     <a class="pull-right" href="https://calendar.google.com/calendar/r/eventedit?
                                     text=My+Custom+Event&
                                     dates=20180512T230000Z/20180513T030000Z&
@@ -38,20 +39,22 @@
                     <%= post.content %>
                 </p>
 
-                <% if post.image? && post.rel_link? %>
-                <%=link_to( image_tag(post.image.url, alt: 'Image', class: 'image-uploaded image-center'), post.rel_link, remote: true) %>
-                <% else %>
-                <% if !post.image? && post.rel_link? %>
-                <p>
-                    <span class="feed-child-venue">Link to the website:</span>
-                    <%= link_to post.rel_link , post.rel_link, remote: true %>
-                </p>
-                <% else %>
-                <% if post.image? && !post.rel_link? %>
-                <%= image_tag(post.image.url, alt: 'Image', class: 'image-uploaded image-center') %>
-                <% end %>
-                <% end %>
-                <% end %>
+                <div>
+                    <% if post.image? && post.rel_link? %>
+                    <%=link_to( image_tag(post.image.url, alt: 'Image', class: 'image-uploaded-main image-center'), post.rel_link, remote: true) %>
+                    <% else %>
+                    <% if !post.image? && post.rel_link? %>
+                    <p>
+                        <span class="feed-child-venue">Link to the website:</span>
+                        <%= link_to post.rel_link , post.rel_link, remote: true %>
+                    </p>
+                    <% else %>
+                    <% if post.image? && !post.rel_link? %>
+                    <%= image_tag(post.image.url, alt: 'Image', class: 'image-uploaded-main image-center') %>
+                    <% end %>
+                    <% end %>
+                    <% end %>
+                </div>
 
                 <p>
                     <span class="feed-child-venue">Date:</span>
@@ -74,8 +77,8 @@
                     <button class="btn btn-default btn-xs comment-btn">Comment</button>
 
                     <button type="button" class="btn btn-basic btn-xs">
-                         <%= link_to "View Full Post", post_path(post.id), class: 'interested' %>
-                        </button>
+                        <%= link_to "View Full Post", post_path(post.id), class: 'interested' %>
+                    </button>
                     <!-- <div class="comment-div">fghgfdsfgx</div> -->
                 </div>
 
