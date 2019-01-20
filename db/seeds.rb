@@ -240,52 +240,52 @@
     Group.create(name: "IIITH")
   end
 
-  def seed_expertises
-    Expertise.create(name: "Ruby")
-    Expertise.create(name: "C++")
-    Expertise.create(name: "Python")
-    Expertise.create(name: "Java")
-    Expertise.create(name: "C")
-    Expertise.create(name: "C#")
-    Expertise.create(name: "JavaScript")
-    Expertise.create(name: "R")
-  end
+  # def seed_expertises
+  #   Expertise.create(name: "Ruby")
+  #   Expertise.create(name: "C++")
+  #   Expertise.create(name: "Python")
+  #   Expertise.create(name: "Java")
+  #   Expertise.create(name: "C")
+  #   Expertise.create(name: "C#")
+  #   Expertise.create(name: "JavaScript")
+  #   Expertise.create(name: "R")
+  # end
 
-  def seed_expertise_users
-    ExpertiseUser.create!([
-    {user_id: 2, expertise_id: 1},
-    {user_id: 2, expertise_id: 2},
-    {user_id: 1, expertise_id: 1},
-    {user_id: 1, expertise_id: 2},
-    {user_id: 4, expertise_id: 1},
-    {user_id: 4, expertise_id: 2},
-    {user_id: 4, expertise_id: 3},
-    {user_id: 8, expertise_id: 3},
-    {user_id: 9, expertise_id: 2},
-    {user_id: 9, expertise_id: 3},
-    {user_id: 11, expertise_id: 1},
-    {user_id: 11, expertise_id: 2},
-    {user_id: 11, expertise_id: 3},
-    {user_id: 7, expertise_id: 3},
-    {user_id: 12, expertise_id: 1},
-    {user_id: 12, expertise_id: 2},
-    {user_id: 12, expertise_id: 3},
-    {user_id: 10, expertise_id: 1},
-    {user_id: 10, expertise_id: 2},
-    {user_id: 10, expertise_id: 3},
-    {user_id: 13, expertise_id: 1},
-    {user_id: 13, expertise_id: 2},
-    {user_id: 13, expertise_id: 3},
-    {user_id: 14, expertise_id: 1},
-    {user_id: 14, expertise_id: 2},
-    {user_id: 14, expertise_id: 3}
-    ])
-  end
+  # def seed_expertise_users
+  #   ExpertiseUser.create!([
+  #   {user_id: 2, expertise_id: 1},
+  #   {user_id: 2, expertise_id: 2},
+  #   {user_id: 1, expertise_id: 1},
+  #   {user_id: 1, expertise_id: 2},
+  #   {user_id: 4, expertise_id: 1},
+  #   {user_id: 4, expertise_id: 2},
+  #   {user_id: 4, expertise_id: 3},
+  #   {user_id: 8, expertise_id: 3},
+  #   {user_id: 9, expertise_id: 2},
+  #   {user_id: 9, expertise_id: 3},
+  #   {user_id: 11, expertise_id: 1},
+  #   {user_id: 11, expertise_id: 2},
+  #   {user_id: 11, expertise_id: 3},
+  #   {user_id: 7, expertise_id: 3},
+  #   {user_id: 12, expertise_id: 1},
+  #   {user_id: 12, expertise_id: 2},
+  #   {user_id: 12, expertise_id: 3},
+  #   {user_id: 10, expertise_id: 1},
+  #   {user_id: 10, expertise_id: 2},
+  #   {user_id: 10, expertise_id: 3},
+  #   {user_id: 13, expertise_id: 1},
+  #   {user_id: 13, expertise_id: 2},
+  #   {user_id: 13, expertise_id: 3},
+  #   {user_id: 14, expertise_id: 1},
+  #   {user_id: 14, expertise_id: 2},
+  #   {user_id: 14, expertise_id: 3}
+  #   ])
+  # end
 
   
   seed_users
   seed_categories
   seed_posts
   seed_groups
-  seed_expertises
-  seed_expertise_users
+  #seed_expertises
+  #seed_expertise_users
