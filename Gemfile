@@ -40,7 +40,7 @@ gem "react_on_rails", "11.0.0"
 gem "webpacker", "~> 3"
 gem 'bootstrap_form'
 gem 'mini_racer', platforms: :ruby
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'rails_admin', '~> 1.3'
 gem 'mini_magick'
 gem 'mailboxer'
